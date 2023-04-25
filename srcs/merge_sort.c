@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   merge_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/04/24 20:15:40 by inwagner         ###   ########.fr       */
+/*   Created: 2023/04/24 20:35:45 by inwagner          #+#    #+#             */
+/*   Updated: 2023/04/24 20:45:22 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+int	merge_sort(int start, int end, int arr[])
 {
-	int				num;
-	int				index;
-	struct s_list	*next;
-}					t_list;
-
-int		ft_atoi(const char *str);
-int		ft_isalldigit(char *str);
-void	ft_putstr_fd(char *str, int fd);
-void	exit_program(int ret, char *msg, int fd);
-
-#endif
+	
+}
