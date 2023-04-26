@@ -13,7 +13,7 @@ O objetivo é organizar os números na pilha A, utilizando os movimentos abaixo:
 - **sa (swap a)**: Troca de posição os dois primeiros elementos da pilha A.
 	- Não faz nada se houver apenas um ou nenhum elemento.
 
-- **sb (swap b)**: Troca de posição os dois primeiros elementos da pilha A.
+- **sb (swap b)**: Troca de posição os dois primeiros elementos da pilha B.
 	- Não faz nada se houver apenas um ou nenhum elemento.
 
 - **ss (swap a and swap b)**: Faz os movimentos `sa` e `sb` ao mesmo tempo.
