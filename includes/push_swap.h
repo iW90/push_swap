@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/04/26 15:57:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:56:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_list
 {
 	int				num;
-	int				index;
+	unsigned int	index;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
