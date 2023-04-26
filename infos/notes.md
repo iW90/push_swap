@@ -24,18 +24,18 @@ O objetivo é organizar os números na pilha A, utilizando os movimentos abaixo:
 - **pb (push b)**: Pega o primeiro elemento do topo da pilha A e coloca no topo da pilha B.
 	- Não faz nada se a pilha A estiver vazia.
 
-- **ra (rotate a)**: Shift up all elements of stack A by 1.
+- **ra (rotate a)**: Sobe todos os elementos da pilha A em 1 nível.
 	- O primeiro elemento se torna o último.
 
-- **rb (rotate b)**: Shift up all elements of stack B by 1.
+- **rb (rotate b)**: Sobe todos os elementos da pilha B em 1 nível.
 	- O primeiro elemento se torna o último.
 
 - **rr (rotate a and rotate b)**: Faz os movimentos `ra` e `rb` ao mesmo tempo.
 
-- **rra (reverse rotate a)**: Shift down all elements of stack A by 1.
+- **rra (reverse rotate a)**: Desce todos os elementos da pilha A em 1 nível.
 	- O último elemento se torna o primeiro.
 
-- **rrb (reverse rotate b)**: Shift down all elements of stack B by 1.
-	- O último elemento se torna o pri,eiro.
+- **rrb (reverse rotate b)**: Desce todos os elementos da pilha B em 1 nível.
+	- O último elemento se torna o primeiro.
 
 - **rrr (reverse rotate a and reverse rotate b)**: Faz os movimentos `rra` e `rrb` ao mesmo tempo.
