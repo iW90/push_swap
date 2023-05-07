@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstswap.c                                       :+:      :+:    :+:   */
+/*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 15:40:37 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 18:41:44 by inwagner         ###   ########.fr       */
+/*   Created: 2023/05/07 19:35:17 by inwagner          #+#    #+#             */
+/*   Updated: 2023/05/07 19:35:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_swap(t_list itemA, t_list itemB)
+/* FUNÇÃO SWAP
+ * Inverte a posição dos dois primeiros elementos de uma mesma pilha.
+ * Usada para os movimentos 'sa', 'sb' e 'ss'.
+ */
+void	ft_swap(t_list *itemA, t_list *itemB)
 {
 	t_list	*temp;
 
@@ -28,18 +32,26 @@ void	ft_swap(t_list itemA, t_list itemB)
 	itemB->prev = temp;
 }
 
-void	ft_push(t_list lstA, t_list lstB)
+/* FUNÇÃO PUSH
+ * Coloca o primeiro elemento de uma pilha no topo da outra pilha.
+ * Usada para os movimentos 'pa' e 'pb'.
+ */
+void	ft_push(t_list *lstA, t_list *lstB)
 {
 	lstB->next->prev = NULL;
 	lstB->next = lstA;
 	lstA->prev = lstB;
 }
 
-void	ft_rotate(t_list itemZ)
+/* FUNÇÃO ROTATE
+ * Coloca o primeiro elemento de uma pilha no final dela.
+ * Usada para os movimentos 'ra', 'rb' e 'rr'.
+ */
+void	ft_rotate(t_list *itemZ)
 {
 	t_list	*itemA;
 
-	itemA = &itemZ;
+	itemA = itemZ;
 	while (itemZ->next)
 		itemZ = itemZ->next;
 	itemA->next->prev = NULL;
@@ -48,11 +60,15 @@ void	ft_rotate(t_list itemZ)
 	itemZ->next = itemA;
 }
 
-void	ft_revrotate(t_list itemZ)
+/* FUNÇÃO REVERSE ROTATE
+ * Coloca o último elemento de uma pilha no início dela.
+ * Usada para os movimentos 'rra', 'rrb' e 'rrr'.
+ */
+void	ft_revrotate(t_list *itemZ)
 {
 	t_list	*itemA;
 
-	itemA = &itemZ;
+	itemA = itemZ;
 	while (itemZ->next)
 		itemZ = itemZ->next;
 	itemZ->prev->next = NULL;

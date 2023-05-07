@@ -6,32 +6,27 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 17:45:48 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:29:47 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	res;
-	int	negative;
+	long	number;
+	int		signal;
 
-	negative = 1;
-	res = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' || \
-			*str == '\v' || *str == '\f' || *str == '\r'))
-		++str;
+	signal = 1;
+	number = 0;
 	if (*str == '-')
-		negative = -1;
-	if (*str == '-' || *str == '+')
-		++str;
+		signal = -1;
 	while (*str && *str >= '0' && *str <= '9')
 	{
-		res = res * 10 + (*str - 48);
+		number = number * 10 + (*str - '0');
 		str++;
 	}
-	return (res * negative);
+	return (number * signal);
 }
 
 int	ft_isalldigit(char *str)

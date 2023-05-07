@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/04/26 17:56:18 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:26:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 	struct s_list	*prev;
 }					t_list;
 
-int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 int		ft_isalldigit(char *str);
 void	ft_putstr_fd(char *str, int fd);
 void	exit_program(int ret, char *msg, int fd);
