@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/04/24 20:16:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 17:45:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_atoi(const char *str)
 
 int	ft_isalldigit(char *str)
 {
+	if (*str == '+' || *str == '-')
+		str++;
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')

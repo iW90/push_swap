@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
+#    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/04/23 15:53:59 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/07 09:36:09 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,19 +49,19 @@ $(PTF):
 
 # Compile objects
 $(PUSHSWAP): $(OBJ)
-	cc $(CFLAG) $(OBJ) $(PTF) -o $(PUSHSWAP)
+	@cc $(CFLAG) $(OBJ) $(PTF) -o $(PUSHSWAP)
 	
 $(BPUSHSWAP): $(BOBJ)
-	cc $(CFLAG) $(BOBJ) $(PTF) -o $(BPUSHSWAP)
+	@cc $(CFLAG) $(BOBJ) $(PTF) -o $(BPUSHSWAP)
 
 # Make Objects
 $(OSRC)%.o: $(SRC)%.c
-	mkdir -p objs
-	cc $(CFLAG) $(HDR) -c $< -o $@
+	@mkdir -p objs
+	@cc $(CFLAG) $(HDR) -c $< -o $@
 
 $(OSRC)%.o: $(BSRC)%.c
-	mkdir -p objs
-	cc $(CFLAG) $(HDR) -c $< -o $@
+	@mkdir -p objs
+	@cc $(CFLAG) $(HDR) -c $< -o $@
 
 # Cleaners e Remaker
 clean:
