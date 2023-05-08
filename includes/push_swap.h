@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/08 11:06:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:18:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
+
+typedef struct s_stacks
+{
+	struct t_list	*stackA;
+	struct t_list	*stackB;
+}					t_stacks;
 
 t_list	*ft_newnode(int num, t_list *previous);
 void	ft_lstclear(t_list *lst);

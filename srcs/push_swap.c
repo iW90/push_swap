@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/08 11:07:06 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:20:36 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,13 @@ static t_list *parse_list(int total, char **num)
 
 int	main(int argc, char **argv)
 {
-	t_list *lst;
+	t_stacks *stacks;
 	
 	if (argc == 1)
 		exit_program(1, "", NULL);
 	num_validator(argc, argv);
-	lst = parse_list(argc, argv);
-	print_list(lst);
+	stacks->stackA = parse_list(argc, argv);
+	stacks->stackB = NULL;
+	print_list(stacks->stackA);
 	return (0);
 }
