@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 21:06:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:53:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ t_list	*ft_newnode(int num, t_list *previous)
 {
 	t_list	*newnode;
 
-	newnode = 0;
-	newnode = (t_list *)malloc(sizeof(t_list));
+	newnode = malloc(sizeof(t_list));
 	if (!newnode)
-		exit_program(1, "Error.\n", previous);
-	*lst = (t_list){0};
+		exit_program(1, "Error\n", previous);
+	*newnode = (t_list){0};
 	newnode->num = num;
 	newnode->prev = previous;
 	if (previous)
@@ -34,6 +33,8 @@ void	ft_lstclear(t_list *lst)
 {
 	t_list	*aux;
 
+	while (lst->next)
+		lst = lst->next;
 	while (lst)
 	{
 		aux = lst->prev;

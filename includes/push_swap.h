@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 21:03:38 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:31:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include "../ft_printf/includes/ft_printf.h"
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
+# define I_MIN -2147483648
+# define I_MAX 2147483647
 
 typedef struct s_list
 {
