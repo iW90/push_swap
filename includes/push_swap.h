@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 21:31:54 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 22:14:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_lstclear(t_list *lst);
 long	ft_atol(const char *str);
 int		ft_isalldigit(char *str);
 void	ft_putstr_fd(char *str, int fd);
-void	exit_program(int ret, char *msg, t_list lst);
-
-int		ft_lstswap(t_list lstA, t_list lstB);
+void	exit_program(int ret, char *msg, t_list *lst);
 
 #endif

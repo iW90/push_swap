@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/07 09:36:09 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/07 22:18:52 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ PSRC	:=	./ft_printf/
 PTF		:=	$(addprefix ${PSRC}, ${PRINTF})
 
 # MANDATORY
-FTS		:=	push_swap.c utils.c
+FTS		:=	push_swap.c utils.c utils_list.c
 OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
 
 # BONUS
@@ -39,37 +39,33 @@ BOBJ	:=	$(BFTS:%.c=$(OSRC)%.o)
 # Commands
 all: $(NAME)
 
-$(NAME): $(PTF) $(PUSHSWAP)
-
-bonus: $(PTF) $(BPUSHSWAP)
+# Compile objects
+$(NAME): $(PTF) $(OBJ)
+	cc $(CFLAG) $(OBJ) $(PTF) -o $@
+	
+bonus: $(PTF) $(BOBJ)
+	cc $(CFLAG) $(BOBJ) $(PTF) -o $(BNAME)
 
 # Compile ft_printf
 $(PTF):
-	@$(MAKE) -C $(PSRC)
-
-# Compile objects
-$(PUSHSWAP): $(OBJ)
-	@cc $(CFLAG) $(OBJ) $(PTF) -o $(PUSHSWAP)
-	
-$(BPUSHSWAP): $(BOBJ)
-	@cc $(CFLAG) $(BOBJ) $(PTF) -o $(BPUSHSWAP)
+	$(MAKE) -C $(PSRC) --silent
 
 # Make Objects
 $(OSRC)%.o: $(SRC)%.c
-	@mkdir -p objs
-	@cc $(CFLAG) $(HDR) -c $< -o $@
+	mkdir -p objs
+	cc $(CFLAG) $(HDR) -c $< -o $@
 
 $(OSRC)%.o: $(BSRC)%.c
-	@mkdir -p objs
-	@cc $(CFLAG) $(HDR) -c $< -o $@
+	mkdir -p objs
+	cc $(CFLAG) $(HDR) -c $< -o $@
 
 # Cleaners e Remaker
 clean:
-	@$(MAKE) -C $(PSRC) clean
+	@$(MAKE) -C $(PSRC) clean --silent
 	@[ -d $(OSRC) ] && rm -rf $(OSRC) && echo objects deleted || [ -f Makefile ]
 
 fclean: clean
-	@$(MAKE) -C $(PSRC) fclean
+	@$(MAKE) -C $(PSRC) fclean --silent
 	@[ -f ./$(PUSHSWAP) ] && rm $(PUSHSWAP) && echo $(PUSHSWAP) deleted || [ -f Makefile ]
 	@[ -f ./$(BPUSHSWAP) ] && rm $(BPUSHSWAP) && echo $(BPUSHSWAP) deleted || [ -f Makefile ]
 	
