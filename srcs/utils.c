@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 19:29:47 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:04:13 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ void	ft_putstr_fd(char *str, int fd)
 	}
 }
 
-void	exit_program(int ret, char *msg, int fd)
+void	exit_program(int ret, char *msg, t_list lst)
 {
-	ft_putstr_fd(msg, fd);
+	if (lst)
+		ft_lstclear(lst);
+	if (msg)
+		ft_putstr_fd(msg, 2);
 	exit(ret);
 }
