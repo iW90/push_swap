@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/08 10:54:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:06:17 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	ft_atol(const char *str)
 	return (number * signal);
 }
 
-int	ft_isalldigit(char *str)
+int	ft_isnumber(char *str)
 {
 	if (*str == '+' || *str == '-')
 		str++;

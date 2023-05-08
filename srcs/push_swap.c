@@ -6,12 +6,15 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/08 10:46:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:07:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/* TESTER: PRINT LIST
+ * Imprime os números da lista linkada.
+ */
 static void print_list(t_list *lst)
 {
 	if (lst)
@@ -20,14 +23,17 @@ static void print_list(t_list *lst)
 			lst = lst->prev;
 		while (lst)
 		{
-			ft_printf("%i\n", lst->num);
+			ft_printf("%i\t", lst->num);
 			lst = lst->next;
 		}
+		ft_printf("\n");
 	}
 }
-/* TESTER: PRINT LIST
+
+/* VERIFICAÇÃO DE CARACTERES NUMÉRICOS
+ * Verifica se o valor recebido possui apenas caracteres
+ * numéricos ou sinais (+ e -).
  */
- 
 static void	num_validator(int total, char **num)
 {
 	int	i;
@@ -35,12 +41,16 @@ static void	num_validator(int total, char **num)
 	i = 1;
 	while (i < total)
 	{
-		if (!ft_isalldigit(num[i]))
+		if (!ft_isnumber(num[i]))
 			exit_program(1, "Error\n", NULL);
 		i++;
 	}
 }
 
+/* VERIFICAÇÃO DE NÚMEROS REPETIDOS
+ * Cada número será comparado aos números anteriores
+ * já salvos na lista linkada para evitar repetição.
+ */
 static void	repeat_num_validator(int n, t_list *lst)
 {
 	if (lst)
@@ -56,6 +66,10 @@ static void	repeat_num_validator(int n, t_list *lst)
 	}
 }
 
+/* DISTRIBUIÇÃO DE NÚMEROS
+ * Insere os números recebidos pelo argv em nodos
+ * de uma lista linkada.
+ */
 static t_list *parse_list(int total, char **num)
 {
 	t_list	*lst;
