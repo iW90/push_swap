@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 22:15:52 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:56:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 static void print_list(t_list *lst)
 {
-	while (lst->prev)
-		lst = lst->prev;
-	while (lst)
+	if (lst)
 	{
-		ft_printf("%i\n", lst->num);
-		lst = lst->next;
+		while (lst->prev)
+			lst = lst->prev;
+		while (lst)
+		{
+			ft_printf("%i\n", lst->num);
+			lst = lst->next;
+		}
 	}
 }
 /* TESTER: PRINT LIST
@@ -40,13 +43,16 @@ static void	num_validator(int total, char **num)
 
 static void	repeat_num_validator(int n, t_list *lst)
 {
-	while (lst->next)
-		lst = lst->next;
-	while (lst)
+	if (lst)
 	{
-		if (lst->num == n)
-			exit_program(1, "Error\n", lst);
-		lst = lst->prev;
+		while (lst->next)
+			lst = lst->next;
+		while (lst)
+		{
+			if (lst->num == n)
+				exit_program(1, "Error\n", lst);
+			lst = lst->prev;
+		}
 	}
 }
 
@@ -67,8 +73,11 @@ static t_list *parse_list(int total, char **num)
 		lst = ft_newnode(n, lst);
 		i++;
 	}
-	while (lst->prev)
-		lst = lst->prev;
+	if (lst)
+	{
+		while (lst->prev)
+			lst = lst->prev;
+	}
 	return (lst);
 }
 

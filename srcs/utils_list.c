@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 21:53:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:57:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,15 @@ void	ft_lstclear(t_list *lst)
 {
 	t_list	*aux;
 
-	while (lst->next)
-		lst = lst->next;
-	while (lst)
+	if (lst)
 	{
-		aux = lst->prev;
-		free(lst);
-		lst = aux;
+		while (lst->next)
+			lst = lst->next;
+		while (lst)
+		{
+			aux = lst->prev;
+			free(lst);
+			lst = aux;
+		}
 	}
 }

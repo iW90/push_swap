@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/07 22:18:52 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/08 10:06:24 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,8 @@ clean:
 
 fclean: clean
 	@$(MAKE) -C $(PSRC) fclean --silent
-	@[ -f ./$(PUSHSWAP) ] && rm $(PUSHSWAP) && echo $(PUSHSWAP) deleted || [ -f Makefile ]
-	@[ -f ./$(BPUSHSWAP) ] && rm $(BPUSHSWAP) && echo $(BPUSHSWAP) deleted || [ -f Makefile ]
+	@[ -f ./$(NAME) ] && rm $(NAME) && echo $(NAME) deleted || [ -f Makefile ]
+	@[ -f ./$(BNAME) ] && rm $(BNAME) && echo $(BNAME) deleted || [ -f Makefile ]
 	
 re: fclean all
 
