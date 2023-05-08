@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/07 22:14:17 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:54:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ long	ft_atol(const char *str)
 	number = 0;
 	if (*str == '-')
 		signal = -1;
+	if (*str == '-' || *str == '+')
+		str++;
 	while (*str && *str >= '0' && *str <= '9')
 	{
 		number = number * 10 + (*str - '0');
