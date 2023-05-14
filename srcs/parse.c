@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 15:30:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 17:56:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:17:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_list	*parse_list(int total, char **num)
 		if (n <= I_MIN || n >= I_MAX)
 			exit_program(1, "Error\n", lst);
 		is_repeated_num(n, lst);
-		lst = ft_newnode(n, lst);
+		lst = ft_newnode(n, lst, i);
 		i++;
 	}
 	if (lst)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 17:55:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:26:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	print_list(t_list *lst)
 			lst = lst->prev;
 		while (lst)
 		{
-			ft_printf("%i\t", lst->num);
+			ft_printf("%i: %i\t", lst->index, lst->num);
 			lst = lst->next;
 		}
 		ft_printf("\n");
@@ -69,8 +69,10 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit_program(1, "", NULL);
 	stks = (t_stacks){0};
+	stks.t_size = argc - 1;
+	stks.a_size = stks.t_size;
 	stks.stack_a = parse_list(argc, argv);
-	push_swap_init(--argc, &stks);
+	push_swap_init(stks.t_size, &stks);
 	exit_program(0, "", stks.stack_a);
 	return (0);
 }

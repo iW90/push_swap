@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 17:55:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:30:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct s_stacks
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int		t_size;
+	int		a_size;
+	int		b_size;
 }					t_stacks;
 
 int		is_sorted(t_list *lst);

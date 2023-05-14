@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/14 17:58:03 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/14 18:28:21 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ MOV		:=	moves/
 PTF		:=	$(addprefix ${PSRC}, ${PRINTF})
 
 # MANDATORY
-FTS		:=	push_swap.c \
+FTS		:=	main.c \
 			utils.c \
 			utils_list.c \
 			parse.c swap.c \

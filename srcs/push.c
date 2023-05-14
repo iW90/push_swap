@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 17:55:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:27:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	pa(t_stacks *stacks)
 		temp = stacks->stack_b->next;
 		stacks->stack_a = ft_push(stacks->stack_b, stacks->stack_a, temp);
 		stacks->stack_b = temp;
+		stacks->a_size++;
+		stacks->b_size--;
 		ft_putstr_fd("pa\n", 1);
 	}
 }
@@ -52,6 +54,8 @@ void	pb(t_stacks *stacks)
 		temp = stacks->stack_a->next;
 		stacks->stack_b = ft_push(stacks->stack_a, stacks->stack_b, temp);
 		stacks->stack_a = temp;
+		stacks->a_size--;
+		stacks->b_size++;
 		ft_putstr_fd("pb\n", 1);
 	}
 }
