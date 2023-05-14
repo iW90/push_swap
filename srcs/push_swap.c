@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/08 12:20:36 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 13:57:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,14 @@ static t_list *parse_list(int total, char **num)
 
 int	main(int argc, char **argv)
 {
-	t_stacks *stacks;
+	t_stacks stks;
 	
 	if (argc == 1)
 		exit_program(1, "", NULL);
 	num_validator(argc, argv);
-	stacks->stackA = parse_list(argc, argv);
-	stacks->stackB = NULL;
-	print_list(stacks->stackA);
+	stks = (t_stacks){0};
+	stks.stackA = parse_list(argc, argv);
+	print_list(stks.stackA);
+	exit_program(0, "", stks.stackA);
 	return (0);
 }
