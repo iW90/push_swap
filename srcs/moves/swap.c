@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 10:19:48 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 11:09:53 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ static void	ft_swap(t_list *itemA, t_list *itemB)
 	itemB->prev = temp;
 }
 
-void	sa(s_stacks *stacks)
+void	sa(t_stacks *stacks)
 {
 	ft_swap(stacks->stackA, stacks->stackA->next);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(s_stacks *stacks)
+void	sb(t_stacks *stacks)
 {
 	ft_swap(stacks->stackB, stacks->stackB->next);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(s_stacks *stacks)
+void	ss(t_stacks *stacks)
 {
 	ft_swap(stacks->stackA, stacks->stackA->next);
 	ft_swap(stacks->stackB, stacks->stackB->next);

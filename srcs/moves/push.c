@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 11:03:36 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 11:09:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ static void	ft_push(t_list *src, t_list *dst)
 }
 
 //Pega o primeiro elemento do topo da pilha B e coloca no topo da pilha A.
-void	pa(s_stacks *stacks)
+void	pa(t_stacks *stacks)
 {
 	ft_push(stacks->stackA, stacks->stackB);
 	ft_putstr_fd("pa\n", 1);
 }
 
 //Pega o primeiro elemento do topo da pilha A e coloca no topo da pilha B.
-void	pb(s_stacks *stacks)
+void	pb(t_stacks *stacks)
 {
 	ft_push(stacks->stackB, stacks->stackA);
 	ft_putstr_fd("pb\n", 1);
