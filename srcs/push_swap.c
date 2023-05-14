@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 13:57:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:55:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* TESTER: PRINT LIST
  * Imprime os números da lista linkada.
  */
-static void print_list(t_list *lst)
+static void	print_list(t_list *lst)
 {
 	if (lst)
 	{
@@ -30,81 +30,47 @@ static void print_list(t_list *lst)
 	}
 }
 
-/* VERIFICAÇÃO DE CARACTERES NUMÉRICOS
- * Verifica se o valor recebido possui apenas caracteres
- * numéricos ou sinais (+ e -).
+/* VERIFICAÇÃO DE LISTA EM ORDEM CRESCENTE
+ * Se estiver ordenada, retorna 'true'.
  */
-static void	num_validator(int total, char **num)
+static void	push_swap_init(int size, t_stacks *stks)
 {
-	int	i;
-
-	i = 1;
-	while (i < total)
+	if (size == 2 && !is_sorted(stks->stack_a))
 	{
-		if (!ft_isnumber(num[i]))
-			exit_program(1, "Error\n", NULL);
-		i++;
+		sa(stks);
+		ft_printf("Two numbers:\n");
+		print_list(stks->stack_a);
+	}
+	else if (size == 3)
+	{
+		ft_printf("Three numbers:\n");
+		print_list(stks->stack_a);
+	}
+	else if (size >= 4)
+	{
+		ft_printf("Four or more numbers:\n");
+		print_list(stks->stack_a);
+		pb(stks);
+		pb(stks);
+		pa(stks);
+		pa(stks);
+		pa(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
 	}
 }
-
-/* VERIFICAÇÃO DE NÚMEROS REPETIDOS
- * Cada número será comparado aos números anteriores
- * já salvos na lista linkada para evitar repetição.
- */
-static void	repeat_num_validator(int n, t_list *lst)
-{
-	if (lst)
-	{
-		while (lst->next)
-			lst = lst->next;
-		while (lst)
-		{
-			if (lst->num == n)
-				exit_program(1, "Error\n", lst);
-			lst = lst->prev;
-		}
-	}
-}
-
-/* DISTRIBUIÇÃO DE NÚMEROS
- * Insere os números recebidos pelo argv em nodos
- * de uma lista linkada.
- */
-static t_list *parse_list(int total, char **num)
-{
-	t_list	*lst;
-	int		i;
-	long	n;
-	
-	lst = NULL;
-	i = 1;
-	while (i < total)
-	{
-		n = ft_atol(num[i]);
-		if (n <= I_MIN || n >= I_MAX)
-			exit_program(1, "Error\n", lst);
-		repeat_num_validator(n, lst);
-		lst = ft_newnode(n, lst);
-		i++;
-	}
-	if (lst)
-	{
-		while (lst->prev)
-			lst = lst->prev;
-	}
-	return (lst);
-}
+		//mini_push_swap();
+		//push_swap()
 
 int	main(int argc, char **argv)
 {
-	t_stacks stks;
-	
+	t_stacks	stks;
+
 	if (argc == 1)
 		exit_program(1, "", NULL);
-	num_validator(argc, argv);
 	stks = (t_stacks){0};
-	stks.stackA = parse_list(argc, argv);
-	print_list(stks.stackA);
-	exit_program(0, "", stks.stackA);
+	stks.stack_a = parse_list(argc, argv);
+	push_swap_init(--argc, &stks);
+	exit_program(0, "", stks.stack_a);
 	return (0);
 }

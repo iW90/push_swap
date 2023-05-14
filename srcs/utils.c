@@ -6,11 +6,22 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 13:46:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:11:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	is_sorted(t_list *lst)
+{
+	while (lst->next)
+	{
+		if (lst->num > lst->next->num)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
 
 long	ft_atol(const char *str)
 {
@@ -29,19 +40,6 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return (number * signal);
-}
-
-int	ft_isnumber(char *str)
-{
-	if (*str == '+' || *str == '-')
-		str++;
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
-	}
-	return (1);
 }
 
 void	ft_putstr_fd(char *str, int fd)

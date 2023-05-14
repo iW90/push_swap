@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 13:53:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:55:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ typedef struct s_list
 
 typedef struct s_stacks
 {
-	t_list	*stackA;
-	t_list	*stackB;
+	t_list	*stack_a;
+	t_list	*stack_b;
 }					t_stacks;
 
-int		ft_isnumber(char *str);
+int		is_sorted(t_list *lst);
 long	ft_atol(const char *str);
 void	ft_putstr_fd(char *str, int fd);
 void	exit_program(int ret, char *msg, t_list *lst);
+
+t_list	*parse_list(int total, char **num);
 
 t_list	*ft_newnode(int num, t_list *previous);
 void	ft_lstclear(t_list *lst);

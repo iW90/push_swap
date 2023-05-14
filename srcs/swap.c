@@ -6,11 +6,11 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 11:09:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:55:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 /* FUNÇÃO SWAP
  * Inverte a posição dos dois primeiros elementos de uma mesma pilha.
@@ -36,19 +36,19 @@ static void	ft_swap(t_list *itemA, t_list *itemB)
 
 void	sa(t_stacks *stacks)
 {
-	ft_swap(stacks->stackA, stacks->stackA->next);
+	ft_swap(stacks->stack_a, stacks->stack_a->next);
 	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_stacks *stacks)
 {
-	ft_swap(stacks->stackB, stacks->stackB->next);
+	ft_swap(stacks->stack_b, stacks->stack_b->next);
 	ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_stacks *stacks)
 {
-	ft_swap(stacks->stackA, stacks->stackA->next);
-	ft_swap(stacks->stackB, stacks->stackB->next);
+	ft_swap(stacks->stack_a, stacks->stack_a->next);
+	ft_swap(stacks->stack_b, stacks->stack_b->next);
 	ft_putstr_fd("ss\n", 1);
 }

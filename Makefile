@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/14 11:08:07 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/14 17:58:03 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,25 +24,27 @@ SRC		:=	./srcs/
 OSRC	:=	./objs/
 BSRC	:=	./srcs/bonus/
 PSRC	:=	./ft_printf/
-MOV		:=	./moves/
+MOV		:=	moves/
 
 # PRINTF
 PTF		:=	$(addprefix ${PSRC}, ${PRINTF})
 
 # MANDATORY
-FTS		:=	push_swap.c utils.c utils_list.c
-#			$(addprefix ${MOV}, swap.c) \
-			$(addprefix ${MOV}, push.c) \
-			$(addprefix ${MOV}, rotate.c) \
-			$(addprefix ${MOV}, reverse_rotate.c)
+FTS		:=	push_swap.c \
+			utils.c \
+			utils_list.c \
+			parse.c swap.c \
+			push.c rotate.c \
+			reverse_rotate.c
 OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
 
 # BONUS
-BFTS	:=	push_swap_bonus.c
-#			$(addprefix ${MOV}, swap.c) \
-			$(addprefix ${MOV}, push.c) \
-			$(addprefix ${MOV}, rotate.c) \
-			$(addprefix ${MOV}, reverse_rotate.c)
+BFTS	:=	push_swap.c \
+			utils.c \
+			utils_list.c \
+			parse.c swap.c \
+			push.c rotate.c \
+			reverse_rotate.c
 BOBJ	:=	$(BFTS:%.c=$(OSRC)%.o)
 
 # Commands
