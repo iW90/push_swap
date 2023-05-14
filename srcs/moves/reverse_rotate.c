@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 10:46:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 11:04:54 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ static void	ft_reverse_rotate(t_list *itemA)
 	itemZ->next = itemA;
 }
 
-void	rra(t_stacks stack)
+void	rra(t_stacks stacks)
 {
-	ft_rotate(stack->stackA);
+	ft_rotate(stacks->stackA);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_stacks stack)
+void	rrb(t_stacks stacks)
 {
-	ft_rotate(stack->stackB);
+	ft_rotate(stacks->stackB);
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(t_stacks stack)
+void	rrr(t_stacks stacks)
 {
-	ft_rotate(stack->stackA);
-	ft_rotate(stack->stackB);
+	ft_rotate(stacks->stackA);
+	ft_rotate(stacks->stackB);
 	ft_putstr_fd("rrr\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 10:39:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 11:03:36 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 /* FUNÇÃO PUSH
  * Coloca o primeiro elemento de uma pilha no topo da outra pilha.
- * Lembrando que existe a possibilidade de ainda não existir lstB,
- * denotando que ela está vazia.
  * Usada para os movimentos 'pa' e 'pb'.
  */
 static void	ft_push(t_list *src, t_list *dst)

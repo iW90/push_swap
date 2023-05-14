@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:12 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 10:43:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 11:04:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ static void	ft_rotate(t_list *itemA)
 	itemA->prev = itemZ;
 }
 
-void	ra(t_stacks stack)
+void	ra(t_stacks stacks)
 {
-	ft_rotate(stack->stackA);
+	ft_rotate(stacks->stackA);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(t_stacks stack)
+void	rb(t_stacks stacks)
 {
-	ft_rotate(stack->stackB);
+	ft_rotate(stacks->stackB);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void	rr(t_stacks stack)
+void	rr(t_stacks stacks)
 {
-	ft_rotate(stack->stackA);
-	ft_rotate(stack->stackB);
+	ft_rotate(stacks->stackA);
+	ft_rotate(stacks->stackB);
 	ft_putstr_fd("rr\n", 1);
 }
