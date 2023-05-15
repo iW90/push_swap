@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 20:21:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:46:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static t_list	*ft_swap(t_list *item_a, t_list *item_b)
 
 void	sa(t_stacks *stacks)
 {
-	if (stacks->stack_a->next)
+	if (stacks->stack_a && stacks->stack_a->next)
 	{
 		stacks->stack_a = ft_swap(stacks->stack_a, stacks->stack_a->next);
 		ft_putstr_fd("sa\n", 1);
@@ -46,7 +46,7 @@ void	sa(t_stacks *stacks)
 
 void	sb(t_stacks *stacks)
 {
-	if (stacks->stack_b->next)
+	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_swap(stacks->stack_b, stacks->stack_b->next);
 		ft_putstr_fd("sb\n", 1);
@@ -55,7 +55,8 @@ void	sb(t_stacks *stacks)
 
 void	ss(t_stacks *stacks)
 {
-	if (stacks->stack_a->next && stacks->stack_b->next)
+	if (stacks->stack_a && stacks->stack_a->next && \
+		stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_a = ft_swap(stacks->stack_a, stacks->stack_a->next);
 		stacks->stack_b = ft_swap(stacks->stack_b, stacks->stack_b->next);
