@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:12 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 20:27:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:48:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static t_list	*ft_reverse_rotate(t_list *item_a)
 
 void	rra(t_stacks *stacks)
 {
-	if (stacks->stack_a->next)
+	if (stacks->stack_a && stacks->stack_a)
 	{
 		stacks->stack_a = ft_reverse_rotate(stacks->stack_a);
 		ft_putstr_fd("rra\n", 1);
@@ -42,7 +42,7 @@ void	rra(t_stacks *stacks)
 
 void	rrb(t_stacks *stacks)
 {
-	if (stacks->stack_b->next)
+	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_reverse_rotate(stacks->stack_b);
 		ft_putstr_fd("rrb\n", 1);
@@ -51,7 +51,8 @@ void	rrb(t_stacks *stacks)
 
 void	rrr(t_stacks *stacks)
 {
-	if (stacks->stack_a->next && stacks->stack_b->next)
+	if (stacks->stack_a && stacks->stack_a->next && \
+		stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_a = ft_reverse_rotate(stacks->stack_a);
 		stacks->stack_b = ft_reverse_rotate(stacks->stack_b);

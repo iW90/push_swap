@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 20:26:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:48:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static t_list	*ft_rotate(t_list *item_a)
 
 void	ra(t_stacks *stacks)
 {
-	if (stacks->stack_a->next)
+	if (stacks->stack_a && stacks->stack_a->next)
 	{
 		stacks->stack_a = ft_rotate(stacks->stack_a);
 		ft_putstr_fd("ra\n", 1);
@@ -44,7 +44,7 @@ void	ra(t_stacks *stacks)
 
 void	rb(t_stacks *stacks)
 {
-	if (stacks->stack_b->next)
+	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_rotate(stacks->stack_b);
 		ft_putstr_fd("rb\n", 1);
@@ -53,7 +53,8 @@ void	rb(t_stacks *stacks)
 
 void	rr(t_stacks *stacks)
 {
-	if (stacks->stack_a->next && stacks->stack_b->next)
+	if (stacks->stack_a && stacks->stack_a->next && \
+		stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_a = ft_rotate(stacks->stack_a);
 		stacks->stack_b = ft_rotate(stacks->stack_b);
