@@ -6,29 +6,11 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 20:04:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:06:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/* TESTER: PRINT LIST
- * Imprime os números da lista linkada.
- */
-static void	print_list(t_list *lst)
-{
-	if (lst)
-	{
-		while (lst->prev)
-			lst = lst->prev;
-		while (lst)
-		{
-			ft_printf("%i: %i\t", lst->index, lst->num);
-			lst = lst->next;
-		}
-		ft_printf("\n");
-	}
-}
 
 /* VERIFICAÇÃO DE LISTA EM ORDEM CRESCENTE
  * Se estiver ordenada, retorna 'true'.
@@ -51,8 +33,7 @@ static void	push_swap_init(int size, t_stacks *stks)
 		ft_printf("Four or more numbers:\n");
 		//print_list(stks->stack_a);
 		pa(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
+		print_stacks(stks->stack_a, stks->stack_b);
 		pb(stks);
 		print_list(stks->stack_a);
 		print_list(stks->stack_b);

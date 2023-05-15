@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 18:30:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:07:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,10 @@ void	rr(t_stacks *stacks);
 void	rra(t_stacks *stacks);
 void	rrb(t_stacks *stacks);
 void	rrr(t_stacks *stacks);
+
+//LEMBRAR DE APAGAR
+void	print_full_stacks(t_list *a, t_list *b);
+void	print_stacks(t_list *a, t_list *b);
+void	print_list(t_list *lst);
 
 #endif
