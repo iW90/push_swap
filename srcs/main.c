@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 18:26:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:04:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,48 @@ static void	push_swap_init(int size, t_stacks *stks)
 	else if (size >= 4)
 	{
 		ft_printf("Four or more numbers:\n");
+		//print_list(stks->stack_a);
+		pa(stks);
 		print_list(stks->stack_a);
+		print_list(stks->stack_b);
 		pb(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
 		pb(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
 		pa(stks);
-		pa(stks);
-		pa(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		sa(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		sb(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		ss(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		ra(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		rb(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		rr(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		rra(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		rrb(stks);
+		print_list(stks->stack_a);
+		print_list(stks->stack_b);
+		rrr(stks);
 		print_list(stks->stack_a);
 		print_list(stks->stack_b);
 	}
 }
-		//mini_push_swap();
-		//push_swap()
 
 int	main(int argc, char **argv)
 {
