@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:51:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 21:07:11 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:01:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,63 @@ static void	stack_screen(t_list *a, t_list *b)
 		stack_screen(a_next, b_next);
 }
 
-void	print_stacks(t_list *a, t_list *b)
+void	print_stacks(t_stacks *s)
 {
 	for (int i = 0; i < 73; i++)
 		write(1, "-", 1);
 	ft_printf("\n\t*    Stack A\t*\t\t\t*    Stack B\t*\n\t*\t\t*\t\t\t*\t\t*\n");
-	stack_screen(a, b);
+	stack_screen(s->stack_a, s->stack_b);
 	for (int i = 0; i < 73; i++)
+		write(1, "-", 1);
+	write(1, "\n", 1);
+}
+
+static void	stack_full_screen(t_list *a, t_list *b)
+{
+	if (!a && !b)
+		return ;
+	if (!a)
+		ft_printf("\t\t\t\t\t\t");
+	else
+	{
+		ft_printf("i:%i\t*\t%i\t*\t", a->index, a->num);
+		if (a->prev)
+			ft_printf("(p-%i)\t", a->prev->num);
+		else
+			ft_printf(" head\t");
+		if (a->next)
+			ft_printf("(n-%i)\t", a->next->num);
+		else
+			ft_printf(" tail\t");
+	}
+	ft_printf("   \t|   ");
+	if (b)
+	{
+		ft_printf("*\t  %i\t*", b->num);
+		if (b->prev)
+			ft_printf("\t(p-%i)\t", b->prev->num);
+		else
+			ft_printf("\thead\t");
+		if (b->next)
+			ft_printf("(n-%i)\t", b->next->num);
+		else
+			ft_printf(" tail\t");
+		ft_printf("\ti:%i", b->index);
+	}
+	ft_printf("\n");
+	t_list *a_next = a ? a->next : NULL;
+	t_list *b_next = b ? b->next : NULL;
+	if (a_next || b_next)
+		stack_full_screen(a_next, b_next);
+}
+
+void	print_full_stacks(t_stacks *s)
+{
+	for (int i = 0; i < 111; i++)
+		write(1, "-", 1);
+	ft_printf("\n\t*    Stack A\t*\t\t\t\t|   *  Stack B\t*\n\t*\t\t*\t\t\t\t|   *\t\t*\n");
+	stack_full_screen(s->stack_a, s->stack_b);
+	for (int i = 0; i < 111; i++)
 		write(1, "-", 1);
 	write(1, "\n", 1);
 }
