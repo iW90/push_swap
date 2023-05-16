@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 15:30:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 20:16:38 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:10:08 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	is_all_digits(int n, char **numbers)
 	while (--n)
 	{
 		if (numbers[n][j] == '+' || numbers[n][j] == '-')
-			n++;
+			j++;
 		while (numbers[n][j])
 		{
 			if (numbers[n][j] < '0' || numbers[n][j] > '9')

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 21:06:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:09:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	push_swap_init(int size, t_stacks *stks)
 		ft_printf("Four or more numbers:\n");
 		//print_list(stks->stack_a);
 		pa(stks);
-		print_stacks(stks->stack_a, stks->stack_b);
+		print_stacks(stks);
 		pb(stks);
 		print_list(stks->stack_a);
 		print_list(stks->stack_b);
