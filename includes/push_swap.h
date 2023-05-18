@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:01:13 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/17 21:58:22 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_stacks
 	int		t_size;
 	int		a_size;
 	int		b_size;
-}					t_stacks;
+}			t_stacks;
 
 int		is_sorted(t_list *lst);
 long	ft_atol(const char *str);
