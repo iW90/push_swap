@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/18 20:43:12 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:57:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	parse_index(int *index, t_list *lst, int sz);
 
 t_list	*ft_newnode(int num, t_list *previous);
 void	ft_lstclear(t_list *lst);
+
+void	push_swap_for_three(t_stacks *stks);
 
 void	sa(t_stacks *stacks);
 void	sb(t_stacks *stacks);

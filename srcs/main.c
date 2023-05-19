@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/18 21:13:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/19 18:23:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /* VERIFICAÇÃO DE LISTA EM ORDEM CRESCENTE
  * Se estiver ordenada, retorna 'true'.
+ */
 static void	push_swap_init(int size, t_stacks *stks)
 {
 	if (size == 2 && !is_sorted(stks->stack_a))
@@ -25,53 +26,14 @@ static void	push_swap_init(int size, t_stacks *stks)
 	else if (size == 3)
 	{
 		ft_printf("Three numbers:\n");
+		push_swap_for_three(stks);
 		print_list(stks->stack_a);
 	}
 	else if (size >= 4)
 	{
 		ft_printf("Four or more numbers:\n");
-		//print_list(stks->stack_a);
-		pa(stks);
-		print_stacks(stks);
-		pb(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		pb(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		pa(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		sa(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		sb(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		ss(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		ra(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		rb(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		rr(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		rra(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		rrb(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
-		rrr(stks);
-		print_list(stks->stack_a);
-		print_list(stks->stack_b);
 	}
 }
- */
 
 int	main(int argc, char **argv)
 {
@@ -91,7 +53,6 @@ int	main(int argc, char **argv)
 	parse_index(index, stks.stack_a, stks.t_size);
 	free(index);
 	push_swap_init(stks.t_size, &stks);
-	//print_list(stks.stack_a);
 	exit_program(0, "", stks.stack_a);
 	return (0);
 }
