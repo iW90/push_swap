@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/14 20:55:30 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/18 20:17:21 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ FTS		:=	main.c \
 			parse.c swap.c \
 			push.c rotate.c \
 			reverse_rotate.c \
+			quick_sort.c \
 			printers.c
 OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
 

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:51:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:01:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 20:48:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_list(t_list *lst)
 			lst = lst->prev;
 		while (lst)
 		{
-			ft_printf("%i: %i\t", lst->index, lst->num);
+			ft_printf("Índice %i:\tNúmero: %i\n", lst->index, lst->num);
 			lst = lst->next;
 		}
 		ft_printf("\n");
@@ -113,4 +113,15 @@ void	print_full_stacks(t_stacks *s)
 	for (int i = 0; i < 111; i++)
 		write(1, "-", 1);
 	write(1, "\n", 1);
+}
+
+void	printarr(int *index, int sz)
+{
+	int	i = 0;
+	
+	while(i < sz)
+	{
+		ft_printf("Arr %i: %i\n", i, index[i]);
+		i++;
+	}
 }

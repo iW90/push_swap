@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 15:30:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:10:08 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:01:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ static void	is_repeated_num(int n, t_list *lst)
 	}
 }
 
-/* DISTRIBUIÇÃO DE NÚMEROS
+/* DISTRIBUIÇÃO DE NÚMEROS NA LISTA E NO ARRAY
  * Insere os números recebidos pelo argv em nodos
  * de uma lista linkada.
  */
-t_list	*parse_list(int total, char **num)
+t_list	*parse_list(int total, char **num, int *index)
 {
 	t_list	*lst;
 	int		i;
@@ -74,6 +74,7 @@ t_list	*parse_list(int total, char **num)
 			exit_program(1, "Error\n", lst);
 		is_repeated_num(n, lst);
 		lst = ft_newnode(n, lst);
+		*index++ = n;
 		i++;
 	}
 	if (lst)
@@ -82,4 +83,25 @@ t_list	*parse_list(int total, char **num)
 			lst = lst->prev;
 	}
 	return (lst);
+}
+
+/* DISTRIBUIÇÃO DE ÍNDICES NA LISTA
+ * Coloca o índice dos números ordenados na variável
+ * index da lista.
+ */
+void	parse_index(int *index, t_list *lst, int sz)
+{
+	int	i;
+	
+	while (lst)
+	{
+		i = 0;
+		while (i < sz)
+		{
+			if(lst->num == index[i])
+				lst->index = i;
+			i++;
+		}
+		lst = lst->next;
+	}
 }

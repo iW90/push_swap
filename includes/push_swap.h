@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/17 21:58:22 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 20:43:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ long	ft_atol(const char *str);
 void	ft_putstr_fd(char *str, int fd);
 void	exit_program(int ret, char *msg, t_list *lst);
 
-t_list	*parse_list(int total, char **num);
+t_list	*parse_list(int total, char **num, int *index);
+void	quick_sort(int *arr, int start, int end);
+void	parse_index(int *index, t_list *lst, int sz);
 
 t_list	*ft_newnode(int num, t_list *previous);
 void	ft_lstclear(t_list *lst);
@@ -63,5 +65,6 @@ void	rrr(t_stacks *stacks);
 void	print_full_stacks(t_stacks *s);
 void	print_stacks(t_stacks *s);
 void	print_list(t_list *lst);
+void	printarr(int *index, int sz);
 
 #endif

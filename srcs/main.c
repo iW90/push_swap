@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:09:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:08:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /* VERIFICAÇÃO DE LISTA EM ORDEM CRESCENTE
  * Se estiver ordenada, retorna 'true'.
- */
 static void	push_swap_init(int size, t_stacks *stks)
 {
 	if (size == 2 && !is_sorted(stks->stack_a))
@@ -72,18 +71,29 @@ static void	push_swap_init(int size, t_stacks *stks)
 		print_list(stks->stack_b);
 	}
 }
+ */
 
 int	main(int argc, char **argv)
 {
 	t_stacks	stks;
+	int			*index;
 
 	if (argc == 1)
 		exit_program(1, "", NULL);
 	stks = (t_stacks){0};
 	stks.t_size = argc - 1;
 	stks.a_size = stks.t_size;
-	stks.stack_a = parse_list(argc, argv);
-	push_swap_init(stks.t_size, &stks);
+	index = malloc(sizeof(int) * stks.t_size);
+	if (!index)
+		exit_program(1, "Error\n", NULL);
+	stks.stack_a = parse_list(argc, argv, index);
+	quick_sort(index, 0, stks.t_size - 1);
+	parse_index(index, stks.stack_a, stks.t_size);
+	free(index);
+
+	//push_swap_init(stks.t_size, &stks);
+	//print_list(stks.stack_a);
 	exit_program(0, "", stks.stack_a);
 	return (0);
 }
+

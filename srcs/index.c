@@ -6,9 +6,10 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 20:04:35 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:04:46 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:54:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	index()
