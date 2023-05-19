@@ -1,35 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 21:13:56 by inwagner          #+#    #+#             */
+/*   Updated: 2023/05/18 21:14:05 by inwagner         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 static void	ft_swap(int *a, int *b)
 {
 	int	temp;
-		
+
 	temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
-static int	partitionator(int *arr, int start, int end)
-{
-	int	pivot;
-	int	i;
-
-	pivot = arr[end];
-	i = start - 1;
-	while (start < end)
-	{
-		if (arr[start] < pivot)
-		{
-			i++;
-			ft_swap(&arr[i], &arr[start]);
-		}
-		start++;
-	}
-	ft_swap(&arr[i + 1], &arr[end]);
-	return (i + 1);
-}
-
-/*
 static int	partitionator(int *arr, int start, int end)
 {
 	int	pivot;
@@ -49,7 +40,6 @@ static int	partitionator(int *arr, int start, int end)
 	ft_swap(&arr[i], &arr[end]);
 	return (i);
 }
-*/
 
 void	quick_sort(int *arr, int start, int end)
 {

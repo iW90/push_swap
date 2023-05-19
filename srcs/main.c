@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/18 21:08:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:13:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,8 @@ int	main(int argc, char **argv)
 	quick_sort(index, 0, stks.t_size - 1);
 	parse_index(index, stks.stack_a, stks.t_size);
 	free(index);
-
-	//push_swap_init(stks.t_size, &stks);
+	push_swap_init(stks.t_size, &stks);
 	//print_list(stks.stack_a);
 	exit_program(0, "", stks.stack_a);
 	return (0);
 }
-

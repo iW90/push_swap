@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 15:30:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/18 21:01:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:12:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,13 @@ t_list	*parse_list(int total, char **num, int *index)
 void	parse_index(int *index, t_list *lst, int sz)
 {
 	int	i;
-	
+
 	while (lst)
 	{
 		i = 0;
 		while (i < sz)
 		{
-			if(lst->num == index[i])
+			if (lst->num == index[i])
 				lst->index = i;
 			i++;
 		}
