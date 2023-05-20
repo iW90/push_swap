@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:04:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 12:17:42 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:20:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,17 @@ void	sort_five(t_stacks *stks)
 			3	0
 			4
 			1
-			2
+			2			
 				O if abaixo serve para gastar menos movimentos
 				rotacionando para cima ou para baixo. No caso
 				específico acima, ele entraria em um looping
 				infinito. O que eu posso colocar no if para
 				impedir sem que eu perca a funcionalidade?
+				
+			index: 3 > 2, logo 'rra'
+				2 3 4 1
+			index: 2 >= 2, logo 'ra'
+				3 4 1 2
 		*/ 
 		
 		if (stks->stack_a->index > 2)
