@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:04:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/19 22:23:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:17:42 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_three(t_stacks *stks)
 	int	max;
 
 	max = is_greater_index(stks->stack_a);
-	while (!is_sorted(stks->stack_a))
+	while (!is_ascending(stks->stack_a))
 	{
 		if (stks->stack_a->next->next->index == max)
 			sa(stks);
@@ -47,6 +47,7 @@ void	sort_three(t_stacks *stks)
  *		Até 2 moves chamando sort_three;
  *		2 pa para devolver B para A.
  */
+/*
 void	sort_five(t_stacks *stks)
 {
 	if (!is_sorted(stks->stack_a))
@@ -65,26 +66,44 @@ void	sort_five(t_stacks *stks)
 		pa(stks);
 	}
 }
-
+*/
 /* TENTATIVA 1 DE OTIMIZAÇÃO DO SORT 5 - FAILED
+*/
 void	sort_five(t_stacks *stks)
 {
-	if (!is_sorted(stks->stack_a))
+	pb(stks);
+	pb(stks);
+	sort_three(stks);
+	if (stks->stack_b->index < stks->stack_b->next->index)
+		sb(stks);
+	if (stks->stack_b->index == stks->i_max && \
+		(stks->stack_a->index == 0 || stks->stack_a->index == 1))
+		pa(stks);
+	while (stks->b_size && !is_sorted(stks->stack_a))
 	{
-		pb(stks);
-		pb(stks);
-		sort_three(stks);
-		if (stks->stack_b->index < stks->stack_b->next->index)
-			sb(stks);
-		while (stks->b_size && stks->stack_a->index)
-		{
-			if (stks->stack_b->index == 4 && stks->stack_a->index == 0)
-				pa(stks);
-			if (stks->stack_b->index == stks->stack_a->index - 1)
-				pa(stks);
-			//if ()
+		if (stks->stack_b->index == stks->stack_a->index - 1)
+			pa(stks);
+		if (stks->stack_b->index == stks->stack_a->index - 1)
+			pa(stks);
+		if (is_sorted(stks->stack_a))
+			break ;
+		
+		/* PROBLEMA A SER RESOLVIDO: Looping infinito
+			A	B
+			3	0
+			4
+			1
+			2
+				O if abaixo serve para gastar menos movimentos
+				rotacionando para cima ou para baixo. No caso
+				específico acima, ele entraria em um looping
+				infinito. O que eu posso colocar no if para
+				impedir sem que eu perca a funcionalidade?
+		*/ 
+		
+		if (stks->stack_a->index > 2)
+			rra(stks);
+		else
 			ra(stks);
-		}
 	}
 }
-*/

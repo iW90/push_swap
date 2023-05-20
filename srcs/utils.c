@@ -6,22 +6,11 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/15 20:28:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:22:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	is_sorted(t_list *lst)
-{
-	while (lst->next)
-	{
-		if (lst->num > lst->next->num)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
 
 long	ft_atol(const char *str)
 {
