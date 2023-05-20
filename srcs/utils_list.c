@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/14 18:30:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/19 22:10:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,31 @@ void	ft_lstclear(t_list *lst)
 			lst = aux;
 		}
 	}
+}
+
+// Pega o maior índice da lista
+int	is_greater_index(t_list *lst)
+{
+	int	greater;
+
+	greater = 0;
+	while (lst)
+	{
+		if (lst->index > greater)
+			greater = lst->index;
+		lst = lst->next;
+	}
+	return (greater);
+}
+
+// Pega o menor índice da lista
+int	is_smaller_index(t_list *lst, int smaller)
+{
+	while (lst)
+	{
+		if (lst->index < smaller)
+			smaller = lst->index;
+		lst = lst->next;
+	}
+	return (smaller);
 }

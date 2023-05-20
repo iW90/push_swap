@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/19 18:23:25 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/19 21:01:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@ static void	push_swap_init(int size, t_stacks *stks)
 	else if (size == 3)
 	{
 		ft_printf("Three numbers:\n");
-		push_swap_for_three(stks);
+		sort_three(stks);
 		print_list(stks->stack_a);
 	}
-	else if (size >= 4)
+	else if (size == 5)
+	{
+		ft_printf("Five numbers:\n");
+		sort_five(stks);
+		print_list(stks->stack_a);
+	}
+	else
 	{
 		ft_printf("Four or more numbers:\n");
 	}
