@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:04:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 12:20:18 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:26:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,28 @@ void	sort_three(t_stacks *stks)
 	}
 }
 
+/* ORDENADOR PARA ENTRADA DE QUATRO NÚMEROS
+ * Versão preguiçosa similar ao sort five.
+ *		Até 3 ra e 1 pb para enviar índice 0 para B;
+ *		Até 2 moves chamando sort_three;
+ *		1 pa para devolver B para A.
+ */
+void	sort_four(t_stacks *stks)
+{
+	if (!is_sorted(stks->stack_a))
+	{
+		while (stks->b_size != 1)
+		{
+			if (stks->stack_a->index == 0)
+				pb(stks);
+			else
+				ra(stks);
+		}
+		sort_three(stks);
+		pa(stks);
+	}
+}
+
 /* ORDENADOR PARA ENTRADA DE CINCO NÚMEROS
  * Versão preguiçosa que utiliza no máximo onze movimentos,
  * mas também utiliza mais movimentos em casos que poderiam
@@ -47,7 +69,6 @@ void	sort_three(t_stacks *stks)
  *		Até 2 moves chamando sort_three;
  *		2 pa para devolver B para A.
  */
-/*
 void	sort_five(t_stacks *stks)
 {
 	if (!is_sorted(stks->stack_a))
@@ -56,7 +77,7 @@ void	sort_five(t_stacks *stks)
 		{
 			if (stks->stack_a->index == 0 || stks->stack_a->index == 1)
 				pb(stks);
-			if (stks->stack_a->index != 0 || stks->stack_a->index != 1)
+			else
 				ra(stks);
 		}
 		if (stks->stack_b->index < stks->stack_b->next->index)
@@ -64,51 +85,5 @@ void	sort_five(t_stacks *stks)
 		sort_three(stks);
 		pa(stks);
 		pa(stks);
-	}
-}
-*/
-/* TENTATIVA 1 DE OTIMIZAÇÃO DO SORT 5 - FAILED
-*/
-void	sort_five(t_stacks *stks)
-{
-	pb(stks);
-	pb(stks);
-	sort_three(stks);
-	if (stks->stack_b->index < stks->stack_b->next->index)
-		sb(stks);
-	if (stks->stack_b->index == stks->i_max && \
-		(stks->stack_a->index == 0 || stks->stack_a->index == 1))
-		pa(stks);
-	while (stks->b_size && !is_sorted(stks->stack_a))
-	{
-		if (stks->stack_b->index == stks->stack_a->index - 1)
-			pa(stks);
-		if (stks->stack_b->index == stks->stack_a->index - 1)
-			pa(stks);
-		if (is_sorted(stks->stack_a))
-			break ;
-		
-		/* PROBLEMA A SER RESOLVIDO: Looping infinito
-			A	B
-			3	0
-			4
-			1
-			2			
-				O if abaixo serve para gastar menos movimentos
-				rotacionando para cima ou para baixo. No caso
-				específico acima, ele entraria em um looping
-				infinito. O que eu posso colocar no if para
-				impedir sem que eu perca a funcionalidade?
-				
-			index: 3 > 2, logo 'rra'
-				2 3 4 1
-			index: 2 >= 2, logo 'ra'
-				3 4 1 2
-		*/ 
-		
-		if (stks->stack_a->index > 2)
-			rra(stks);
-		else
-			ra(stks);
 	}
 }

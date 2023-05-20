@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/19 22:10:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:11:43 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ t_list	*ft_newnode(int num, t_list *previous)
 	if (previous)
 		previous->next = newnode;
 	return (newnode);
+}
+
+// Pega o último elemento da lista
+t_list	ft_lstlast(t_list *lst)
+{
+	//if (!lst)
+	//	return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (*lst);
 }
 
 // Deleta toda a lista a partir do último elemento da lista
