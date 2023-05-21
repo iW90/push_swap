@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 19:27:10 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:38:35 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_list
 {
 	int				num;
-	int	index;
+	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -45,18 +45,22 @@ t_list	*parse_list(int total, char **num, int *index);
 void	parse_index(int *index, t_list *lst, int sz);
 
 void	quick_sort(int *arr, int start, int end);
-int		is_ascending(t_list *lst);
 int		is_sorted(t_list *lst);
+int		is_sorted_reverse(t_list *lst);
+int		is_ascending(t_list *lst);
+int		is_descending(t_list *lst);
 
 t_list	*ft_newnode(int num, t_list *previous);
-t_list	ft_lstlast(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
 int		is_greater_index(t_list *lst);
-int		is_smaller_index(t_list *lst, int smaller);
+int		is_smaller_index(t_list *lst);
 
 void	sort_three(t_stacks *stks);
 void	sort_four(t_stacks *stks);
 void	sort_five(t_stacks *stks);
+
+void	push_swap(t_stacks *stks);
 
 void	sa(t_stacks *stacks);
 void	sb(t_stacks *stacks);

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 21:13:56 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 11:22:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:26:39 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,4 @@ void	quick_sort(int *arr, int start, int end)
 		quick_sort(arr, start, pivot - 1);
 		quick_sort(arr, pivot + 1, end);
 	}
-}
-
-int	is_sorted(t_list *lst)
-{
-	while (lst->next)
-	{
-		if (lst->index != lst->next->index - 1)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
-
-int	is_ascending(t_list *lst)
-{
-	while (lst->next)
-	{
-		if (lst->index > lst->next->index)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
 }

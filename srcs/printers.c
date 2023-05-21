@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:51:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/19 18:23:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:38:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	print_list(t_list *lst)
 			ft_printf("Índice %i:\tNúmero: %i\n", lst->index, lst->num);
 			lst = lst->next;
 		}
-		ft_printf("\n");
 	}
 }
 
