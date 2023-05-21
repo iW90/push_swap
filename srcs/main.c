@@ -6,14 +6,15 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 20:38:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:39:45 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* VERIFICAÇÃO DE LISTA EM ORDEM CRESCENTE
- * Se estiver ordenada, retorna 'true'.
+/* INICIALIZADOR
+ * Chama o sort correto de acordo com
+ * a quantidade de números de entrada.
  */
 static void	push_swap_init(int size, t_stacks *stks)
 {
@@ -33,7 +34,6 @@ static void	push_swap_init(int size, t_stacks *stks)
 		print_list(stks->stack_b);
 	}
 }
-			//ft_printf("Four or more numbers:\n");
 
 int	main(int argc, char **argv)
 {

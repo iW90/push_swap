@@ -6,15 +6,15 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:04:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 19:26:55 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:41:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /* ORDENADOR PARA ENTRADA DE TRÊS NÚMEROS
- * Versão otimizada que utiliza no máximo dois movimentos para ordenar:
- * Baseado na posição do maior índice, no caso o 2:
+ * Versão otimizada que utiliza no máximo dois movimentos para ordenar.
+ * Baseado na posição do maior índice, no exemplo abaixo, o 2:
  *		 0 	 1 	|2|	sorted
  *		 1 	 0 	|2|	sa
  *		 0 	|2|	 1 	rra (requer mais um movimento 'sa', por isso o while)
@@ -26,7 +26,7 @@ void	sort_three(t_stacks *stks)
 {
 	int	max;
 
-	max = is_greater_index(stks->stack_a);
+	max = greater_index(stks->stack_a);
 	while (!is_ascending(stks->stack_a))
 	{
 		if (stks->stack_a->next->next->index == max)

@@ -6,13 +6,15 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 20:33:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:50:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// Cria um novo item e adiciona à lista
+/* NOVO NODE
+ * Cria um novo item e adiciona à lista
+ */
 t_list	*ft_newnode(int num, t_list *previous)
 {
 	t_list	*newnode;
@@ -28,7 +30,9 @@ t_list	*ft_newnode(int num, t_list *previous)
 	return (newnode);
 }
 
-// Pega o último elemento da lista
+/* ÚLTIMO ELEMENTO
+ * Pega o último elemento da lista
+ */
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
@@ -38,7 +42,9 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-// Deleta toda a lista a partir do último elemento da lista
+/* DELETAR LISTA
+ * Deleta toda a lista a partir do último elemento da lista.
+ */
 void	ft_lstclear(t_list *lst)
 {
 	t_list	*aux;
@@ -56,8 +62,10 @@ void	ft_lstclear(t_list *lst)
 	}
 }
 
-// Pega o maior índice da lista
-int	is_greater_index(t_list *lst)
+/* MAIOR INDEX
+ * Pega o maior índice da lista
+ */
+int	greater_index(t_list *lst)
 {
 	int	greater;
 
@@ -71,8 +79,10 @@ int	is_greater_index(t_list *lst)
 	return (greater);
 }
 
-// Pega o menor índice da lista
-int	is_smaller_index(t_list *lst)
+/* MENOR INDEX
+ * Pega o menor índice da lista
+ */
+int	smaller_index(t_list *lst)
 {
 	int	smaller;
 

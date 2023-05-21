@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 20:38:35 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:17:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		is_descending(t_list *lst);
 t_list	*ft_newnode(int num, t_list *previous);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
-int		is_greater_index(t_list *lst);
-int		is_smaller_index(t_list *lst);
+int		greater_index(t_list *lst);
+int		smaller_index(t_list *lst);
 
 void	sort_three(t_stacks *stks);
 void	sort_four(t_stacks *stks);
