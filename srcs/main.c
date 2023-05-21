@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 21:39:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:47:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static void	push_swap_init(int size, t_stacks *stks)
 			sort_five(stks);
 		else if (size >= 6)
 			push_swap(stks);
-		//print_list(stks->stack_a);
-		print_list(stks->stack_b);
 	}
 }
 

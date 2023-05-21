@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:46:49 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 21:43:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:47:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /* ORDENADOR DESCENDENTE PARA ENTRADA DE TRÊS NÚMEROS
  * Versão reversa do sort de três números
- */
 static void	sort_three_reverse(t_stacks *stks)
 {
 	int	min;
@@ -30,6 +29,7 @@ static void	sort_three_reverse(t_stacks *stks)
 			rb(stks);
 	}
 }
+ */
 
 /* ENCONTRA O NÚMERO MAIS PRÓXIMO
  * Encontra o número mais próximo da pilha para colocar
@@ -41,8 +41,10 @@ static void	sort_three_reverse(t_stacks *stks)
  */
 int	find_closest_number(int index, t_list *lst)
 {
-	int	closest;
+	int		closest;
+	t_list	*head;
 
+	head = lst;
 	closest = -1;
 	while (lst)
 	{
@@ -52,7 +54,7 @@ int	find_closest_number(int index, t_list *lst)
 		lst = lst->next;
 	}
 	if (closest == -1)
-		return (greater_index(lst));
+		return (greater_index(head));
 	return (closest);
 }
 
@@ -63,13 +65,15 @@ int	find_closest_number(int index, t_list *lst)
  */
 void	push_swap(t_stacks *stks)
 {
+	int	target;
+
 	pb(stks);
 	pb(stks);
 	pb(stks);
 	sort_three_reverse(stks);
 	while (stks->stack_a)
 	{
-		find_closest_number(stks->stack_a->index, stks->stack_a);
+		target = find_closest_number(stks->stack_a->index, stks->stack_b);
 		stks->stack_a = stks->stack_a->next;
 	}
 }

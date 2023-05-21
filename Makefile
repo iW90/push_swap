@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/20 20:39:12 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/21 09:56:49 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,10 @@ PTF		:=	$(addprefix ${PSRC}, ${PRINTF})
 FTS		:=	main.c \
 			utils.c \
 			utils_list.c \
-			parse.c swap.c \
-			push.c rotate.c \
+			parse.c \
+			swap.c \
+			push.c \
+			rotate.c \
 			reverse_rotate.c \
 			quick_sort.c \
 			mini_push_swap.c \

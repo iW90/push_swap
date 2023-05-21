@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 20:51:33 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 19:38:48 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/21 10:44:41 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,45 +124,3 @@ void	printarr(int *index, int sz)
 		i++;
 	}
 }
-
-/* MOVEMENTS TESTER
-	//print_list(stks->stack_a);
-	pa(stks);
-	print_stacks(stks);
-	pb(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	pb(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	pa(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	sa(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	sb(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	ss(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	ra(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	rb(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	rr(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	rra(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	rrb(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-	rrr(stks);
-	print_list(stks->stack_a);
-	print_list(stks->stack_b);
-*/
