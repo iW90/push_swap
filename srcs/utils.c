@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 11:22:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:10:23 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,11 @@ void	exit_program(int ret, char *msg, t_list *lst)
 	if (msg)
 		ft_putstr_fd(msg, 2);
 	exit(ret);
+}
+
+int	abs(int num)
+{
+	if (num < 0)
+		num = -num;
+	return (num);
 }

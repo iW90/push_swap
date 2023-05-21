@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 21:17:18 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:11:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stacks
 long	ft_atol(const char *str);
 void	ft_putstr_fd(char *str, int fd);
 void	exit_program(int ret, char *msg, t_list *lst);
+int		abs(int num);
 
 t_list	*parse_list(int total, char **num, int *index);
 void	parse_index(int *index, t_list *lst, int sz);
