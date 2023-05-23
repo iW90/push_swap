@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:04:06 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/20 21:41:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:37:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,25 @@ void	sort_three(t_stacks *stks)
 			rra(stks);
 		else if (stks->stack_a->index == max)
 			ra(stks);
+	}
+}
+
+/* ORDENADOR DESCENDENTE PARA ENTRADA DE TRÊS NÚMEROS
+ * Versão reversa do sort de três números
+ */
+void	sort_three_reverse(t_stacks *stks)
+{
+	int	min;
+
+	min = smaller_index(stks->stack_b);
+	while (!is_descending(stks->stack_b))
+	{
+		if (stks->stack_b->next->next->index == min)
+			sb(stks);
+		else if (stks->stack_b->next->index == min)
+			rrb(stks);
+		else if (stks->stack_b->index == min)
+			rb(stks);
 	}
 }
 

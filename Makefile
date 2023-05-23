@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/21 09:56:49 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/22 20:39:00 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ FTS		:=	main.c \
 			mini_push_swap.c \
 			push_swap.c \
 			sort_checkers.c \
+			cost_calculator.c \
 			printers.c
 OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
 

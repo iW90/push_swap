@@ -6,102 +6,65 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:46:49 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/21 19:28:50 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:37:52 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* ORDENADOR DESCENDENTE PARA ENTRADA DE TRÊS NÚMEROS
- * Versão reversa do sort de três números
- */
-static void	sort_three_reverse(t_stacks *stks)
+static void	do_moves_a_and_b(t_cost *cost, t_stacks *stks)
 {
-	int	min;
-
-	min = smaller_index(stks->stack_b);
-	while (!is_descending(stks->stack_b))
+	if ((cost->a > 0 && cost->b < 0) || (cost->a < 0 && cost->b > 0))
+		return ;
+	while (cost->a && cost->b)
 	{
-		if (stks->stack_b->next->next->index == min)
-			sb(stks);
-		else if (stks->stack_b->next->index == min)
-			rrb(stks);
-		else if (stks->stack_b->index == min)
+		if (cost->a > 0 && cost->b > 0)
+		{
+			rr(stks);
+			cost->a--;
+			cost->b--;
+		}
+		if (cost->a < 0 && cost->b < 0)
+		{
+			rrr(stks);
+			cost->a++;
+			cost->b++;
+		}
+	}
+}
+
+static void	do_moves_a_or_b(t_cost *cost, t_stacks *stks)
+{
+	while (cost->a || cost->b)
+	{
+		if (cost->a > 0)
+		{
+			ra(stks);
+			cost->a--;
+		}
+		if (cost->a < 0)
+		{
+			rra(stks);
+			cost->a++;
+		}
+		if (cost->b > 0)
+		{
 			rb(stks);
+			cost->b--;
+		}
+		if (cost->b < 0)
+		{
+			rrb(stks);
+			cost->b++;
+		}
 	}
 }
 
-/* ENCONTRA O NÚMERO MAIS PRÓXIMO
- * Encontra o número mais próximo da pilha para colocar
- * no topo da pilha oposta mantendo a ordem da pilha oposta.
- * Fora desta função haverá outro while que passa item por item
- * de uma pilha, passando o índice (index) de cada um desses itens
- * para comparar com todos os itens da pilha oposta (lst).
- * index é de uma pilha e lst é da pilha oposta à do index.
- */
-int	find_closest_number(int index, t_list *lst)
+static void	do_moves(t_cost *cost, t_stacks *stks)
 {
-	int		closest;
-	t_list	*head;
-
-	head = lst;
-	closest = -1;
-	while (lst)
-	{
-		if (lst->index < index && \
-		(closest == -1 || index - lst->index < index - closest))
-			closest = lst->index;
-		lst = lst->next;
-	}
-	if (closest == -1)
-		return (greater_index(head));
-	return (closest);
-}
-
-/* CALCULADORA DE CUSTO
- * Calcula o menor custo.
- * index, lst e size são da mesma lista.
- * Quando o item da lista encontrar ele mesmo, o looping é interrompido
- * com o valor de menor custo. Calculo a distância do index até o topo.
- */
-int	calculate_cost(int index, t_list *lst, int size)
-{
-	int	min_cost;
-
-	min_cost = 0;
-	while (lst)
-	{
-		if (lst->index == index)
-			break ;
-		min_cost++;
-		lst = lst->next;
-	}
-	if (min_cost > size / 2)
-		return (-(size - min_cost)); // Calcula de baixo para cima
-	return (min_cost);
-}
-
-/* SOMA DE CUSTOS
- * Calcula o total de movimentos, levando em consideração
- * movimentos que podem ser executados dos dois lados ao
- * mesmo tempo (rrr, rr).
- */
-int	sum_cost(int a_cost, int b_cost)
-{
-	if (a_cost < 0 && b_cost < 0)
-	{
-		if (a_cost > b_cost)
-			return (abs(a_cost));
-		return (abs(b_cost));
-	}
-	else if (a_cost > 0 && b_cost > 0)
-	{
-		if (a_cost > b_cost)
-			return (a_cost);
-		return (b_cost);
-	}
-	else
-		return (abs(a_cost) + abs(b_cost));
+	do_moves_a_and_b(cost, stks);
+	do_moves_a_or_b(cost, stks);
+	pb(stks);
 }
 
 /* PRIMEIROS PASSOS
@@ -111,32 +74,26 @@ int	sum_cost(int a_cost, int b_cost)
  */
 void	push_swap(t_stacks *stks)
 {
-	t_list	*lst_a;
-	int		target;
-	int		a_cost;
-	int		b_cost;
-	int		t_cost;
+	t_cost	cost;
 
+	cost = (t_cost){0};
 	pb(stks);
 	pb(stks);
 	pb(stks);
 	sort_three_reverse(stks);
-	pb(stks);
-	pb(stks);
-	pb(stks);
-	print_full_stacks(stks);
-	lst_a = stks->stack_a;
-	while (lst_a)
+	while (stks->a_size)
 	{
-		target = find_closest_number(lst_a->index, stks->stack_b);
-		ft_printf("\nCostA:\nIndex: %i ", lst_a->index);
-		a_cost = calculate_cost(lst_a->index, stks->stack_a, stks->a_size);
-		ft_printf("MinCost: %i\n", a_cost);
-		ft_printf("CostB:\nIndex: %i ", target);
-		b_cost = calculate_cost(target, stks->stack_b, stks->b_size);
-		ft_printf("MinCost: %i\n", b_cost);
-		t_cost = sum_cost(a_cost, b_cost);
-		ft_printf("TotalCost: %i\n\n", t_cost);
-		lst_a = lst_a->next;
+		cost.total = I_MAX;
+		get_cost(&cost, stks);
+		do_moves(&cost, stks);
 	}
+	while (stks->b_size)
+		pa(stks);
+	cost.a = calculate_cost(0, stks->stack_a, stks->a_size);
+	if (cost.a > 0)
+		while (cost.a--)
+			ra(stks);
+	else if (cost.a < 0)
+		while (cost.a++)
+			rra(stks);
 }

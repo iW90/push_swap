@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/21 19:11:37 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:53:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ typedef struct s_stacks
 	int		b_size;
 }			t_stacks;
 
+typedef struct s_cost
+{
+	int		a;
+	int		b;
+	int		total;
+}			t_cost;
+
 long	ft_atol(const char *str);
 void	ft_putstr_fd(char *str, int fd);
 void	exit_program(int ret, char *msg, t_list *lst);
@@ -58,10 +65,14 @@ int		greater_index(t_list *lst);
 int		smaller_index(t_list *lst);
 
 void	sort_three(t_stacks *stks);
+void	sort_three_reverse(t_stacks *stks);
 void	sort_four(t_stacks *stks);
 void	sort_five(t_stacks *stks);
 
 void	push_swap(t_stacks *stks);
+
+int		calculate_cost(int index, t_list *lst, int size);
+void	get_cost(t_cost *cost, t_stacks *stks);
 
 void	sa(t_stacks *stacks);
 void	sb(t_stacks *stacks);
