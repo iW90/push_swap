@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:30:12 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/22 20:54:11 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:58:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	sum_cost(int a_cost, int b_cost)
 {
 	if (a_cost < 0 && b_cost < 0)
 	{
-		if (a_cost > b_cost)
+		if (a_cost < b_cost)
 			return (abs(a_cost));
 		return (abs(b_cost));
 	}
