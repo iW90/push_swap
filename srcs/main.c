@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/22 20:53:36 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:31:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,3 @@ int	main(int argc, char **argv)
 	exit_program(0, "", stks.stack_a);
 	return (0);
 }
-	//print_full_stacks(&stks);

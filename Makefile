@@ -6,13 +6,13 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/22 20:39:00 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/22 21:33:30 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAMES
 NAME	:=	push_swap
-BNAME	:=	push_swap_bonus
+BNAME	:=	checker
 PRINTF	:=	ft_printf.a
 
 # FLAGS
@@ -42,17 +42,11 @@ FTS		:=	main.c \
 			mini_push_swap.c \
 			push_swap.c \
 			sort_checkers.c \
-			cost_calculator.c \
-			printers.c
+			cost_calculator.c
 OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
 
 # BONUS
-BFTS	:=	push_swap.c \
-			utils.c \
-			utils_list.c \
-			parse.c swap.c \
-			push.c rotate.c \
-			reverse_rotate.c
+BFTS	:=	push_swap.c
 BOBJ	:=	$(BFTS:%.c=$(OSRC)%.o)
 
 # Commands

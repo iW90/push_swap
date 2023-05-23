@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/22 20:53:19 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:32:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	sort_three(t_stacks *stks);
 void	sort_three_reverse(t_stacks *stks);
 void	sort_four(t_stacks *stks);
 void	sort_five(t_stacks *stks);
-
 void	push_swap(t_stacks *stks);
 
 int		calculate_cost(int index, t_list *lst, int size);
@@ -85,11 +84,5 @@ void	rr(t_stacks *stacks);
 void	rra(t_stacks *stacks);
 void	rrb(t_stacks *stacks);
 void	rrr(t_stacks *stacks);
-
-//LEMBRAR DE APAGAR
-void	print_full_stacks(t_stacks *s);
-void	print_stacks(t_stacks *s);
-void	print_list(t_list *lst);
-void	printarr(int *index, int sz);
 
 #endif
