@@ -5,54 +5,54 @@
 #                                                     +:+ +:+         +:+      #
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/23 20:34:29 by inwagner         ###   ########.fr        #
+#    Created: 2023/05/23 18:31:22 by inwagner          #+#    #+#              #
+#    Updated: 2023/05/23 20:47:19 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAMES
-NAME	:=	push_swap
 BNAME	:=	checker
 
 # FLAGS
-HDR		:=	-I ./includes/
+HDR		:=	-I ../../includes/
 CFLAG	:=	-Wall -Werror -Wextra
 
 # PATHS
-SRC		:=	./srcs/
-OSRC	:=	./objs/
-BSRC	:=	./srcs/bonus/
+OSRC	:=	../../objs/
+BSRC	:=	../../
+GSRC	:=	./gnl/
+BPATH	:=	$(addprefix ${BSRC}, ${BNAME})
 
-# MANDATORY
-FTS		:=	main.c \
-			utils.c \
-			utils_list.c \
-			parse.c \
-			swap.c \
-			push.c \
-			rotate.c \
-			reverse_rotate.c \
-			quick_sort.c \
-			mini_push_swap.c \
-			push_swap.c \
-			sort_checkers.c \
-			cost_calculator.c
-OBJ		:=	$(FTS:%.c=$(OSRC)%.o)
+# BONUS
+BFTS	:=	checker_bonus.c \
+			utils_list_bonus.c \
+			utils_bonus.c \
+			parse_bonus.c \
+			swap_bonus.c \
+			push_bonus.c \
+			rotate_bonus.c \
+			reverse_rotate_bonus.c
+BOBJ	:=	$(BFTS:%.c=$(OSRC)%.o)
+
+# GNL
+GFTS	:=	get_next_line.c \
+			get_next_line_utils.c
+GOBJ	:=	$(GFTS:%.c=$(OSRC)%.o)
 
 # Commands
-all: $(NAME)
+all: $(BPATH)
 
 # Compile objects
-$(NAME): $(OBJ)
-	cc $(CFLAG) $(OBJ) -o $@
-	
-bonus:
-	@$(MAKE) -C $(BSRC) 
-#--silent
+$(BPATH): $(GOBJ) $(BOBJ)
+	cc $(CFLAG) $(GOBJ) $(BOBJ) -o $@
 
 # Make Objects
-$(OSRC)%.o: $(SRC)%.c
-	mkdir -p objs
+$(OSRC)%.o: $(GSRC)%.c
+	mkdir -p $(OSRC)
+	cc $(CFLAG) $(HDR) -c $< -o $@
+
+$(OSRC)%.o: %.c
+	mkdir -p $(OSRC)
 	cc $(CFLAG) $(HDR) -c $< -o $@
 
 # Cleaners e Remaker
@@ -60,10 +60,9 @@ clean:
 	@[ -d $(OSRC) ] && rm -rf $(OSRC) && echo objects deleted || [ -f Makefile ]
 
 fclean: clean
-	@$(MAKE) -C $(BSRC) fclean --silent
-	@[ -f ./$(NAME) ] && rm $(NAME) && echo $(NAME) deleted || [ -f Makefile ]
+	@[ -f $(BPATH) ] && rm $(BPATH) && echo $(BNAME) deleted || [ -f Makefile ]
 	
 re: fclean all
 
 # Recipes
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
