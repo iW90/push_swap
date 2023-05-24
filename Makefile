@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 15:42:23 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/23 20:34:29 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/23 21:06:54 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,16 +44,15 @@ all: $(NAME)
 
 # Compile objects
 $(NAME): $(OBJ)
-	cc $(CFLAG) $(OBJ) -o $@
+	@cc $(CFLAG) $(OBJ) -o $@
 	
 bonus:
-	@$(MAKE) -C $(BSRC) 
-#--silent
+	@$(MAKE) -C $(BSRC) --silent
 
 # Make Objects
 $(OSRC)%.o: $(SRC)%.c
-	mkdir -p objs
-	cc $(CFLAG) $(HDR) -c $< -o $@
+	@mkdir -p objs
+	@cc $(CFLAG) $(HDR) -c $< -o $@
 
 # Cleaners e Remaker
 clean:

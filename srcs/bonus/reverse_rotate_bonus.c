@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:12 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 19:02:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:37:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	rra(t_stacks *stacks)
 	if (stacks->stack_a && stacks->stack_a)
 	{
 		stacks->stack_a = ft_reverse_rotate(stacks->stack_a);
-		ft_putstr_fd("rra\n", 1);
 	}
 }
 
@@ -45,7 +44,6 @@ void	rrb(t_stacks *stacks)
 	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_reverse_rotate(stacks->stack_b);
-		ft_putstr_fd("rrb\n", 1);
 	}
 }
 
@@ -56,6 +54,5 @@ void	rrr(t_stacks *stacks)
 	{
 		stacks->stack_a = ft_reverse_rotate(stacks->stack_a);
 		stacks->stack_b = ft_reverse_rotate(stacks->stack_b);
-		ft_putstr_fd("rrr\n", 1);
 	}
 }

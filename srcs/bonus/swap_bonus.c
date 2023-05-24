@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:16 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 19:01:56 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:37:37 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	sa(t_stacks *stacks)
 	if (stacks->stack_a && stacks->stack_a->next)
 	{
 		stacks->stack_a = ft_swap(stacks->stack_a, stacks->stack_a->next);
-		ft_putstr_fd("sa\n", 1);
 	}
 }
 
@@ -49,7 +48,6 @@ void	sb(t_stacks *stacks)
 	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_swap(stacks->stack_b, stacks->stack_b->next);
-		ft_putstr_fd("sb\n", 1);
 	}
 }
 
@@ -60,6 +58,5 @@ void	ss(t_stacks *stacks)
 	{
 		stacks->stack_a = ft_swap(stacks->stack_a, stacks->stack_a->next);
 		stacks->stack_b = ft_swap(stacks->stack_b, stacks->stack_b->next);
-		ft_putstr_fd("ss\n", 1);
 	}
 }

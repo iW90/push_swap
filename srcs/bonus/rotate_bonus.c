@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:07 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 19:01:58 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:37:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ra(t_stacks *stacks)
 	if (stacks->stack_a && stacks->stack_a->next)
 	{
 		stacks->stack_a = ft_rotate(stacks->stack_a);
-		ft_putstr_fd("ra\n", 1);
 	}
 }
 
@@ -47,7 +46,6 @@ void	rb(t_stacks *stacks)
 	if (stacks->stack_b && stacks->stack_b->next)
 	{
 		stacks->stack_b = ft_rotate(stacks->stack_b);
-		ft_putstr_fd("rb\n", 1);
 	}
 }
 
@@ -58,6 +56,5 @@ void	rr(t_stacks *stacks)
 	{
 		stacks->stack_a = ft_rotate(stacks->stack_a);
 		stacks->stack_b = ft_rotate(stacks->stack_b);
-		ft_putstr_fd("rr\n", 1);
 	}
 }

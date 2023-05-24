@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/23 18:31:22 by inwagner          #+#    #+#              #
-#    Updated: 2023/05/23 20:47:19 by inwagner         ###   ########.fr        #
+#    Updated: 2023/05/23 21:07:12 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,16 +44,16 @@ all: $(BPATH)
 
 # Compile objects
 $(BPATH): $(GOBJ) $(BOBJ)
-	cc $(CFLAG) $(GOBJ) $(BOBJ) -o $@
+	@cc $(CFLAG) $(GOBJ) $(BOBJ) -o $@
 
 # Make Objects
 $(OSRC)%.o: $(GSRC)%.c
-	mkdir -p $(OSRC)
-	cc $(CFLAG) $(HDR) -c $< -o $@
+	@mkdir -p $(OSRC)
+	@cc $(CFLAG) $(HDR) -c $< -o $@
 
 $(OSRC)%.o: %.c
-	mkdir -p $(OSRC)
-	cc $(CFLAG) $(HDR) -c $< -o $@
+	@mkdir -p $(OSRC)
+	@cc $(CFLAG) $(HDR) -c $< -o $@
 
 # Cleaners e Remaker
 clean:

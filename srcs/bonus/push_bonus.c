@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 10:06:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 19:02:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:37:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	pa(t_stacks *stacks)
 		stacks->stack_b = temp;
 		stacks->a_size++;
 		stacks->b_size--;
-		ft_putstr_fd("pa\n", 1);
 	}
 }
 
@@ -62,6 +61,5 @@ void	pb(t_stacks *stacks)
 		stacks->stack_a = temp;
 		stacks->a_size--;
 		stacks->b_size++;
-		ft_putstr_fd("pb\n", 1);
 	}
 }

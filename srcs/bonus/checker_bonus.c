@@ -6,11 +6,12 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:11:11 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 20:29:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:38:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/checker.h"
+#include <stdio.h>
 
 void	do_moves(char *move, t_stacks *stks)
 {
