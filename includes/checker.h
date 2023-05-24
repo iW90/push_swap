@@ -6,10 +6,9 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:22:35 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 20:10:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:40:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef CHECKER_H
 # define CHECKER_H

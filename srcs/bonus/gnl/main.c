@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:09:26 by inwagner          #+#    #+#             */
-/*   Updated: 2022/11/11 21:43:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:41:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,3 @@ int	main(int argc, char **argv)
 	fd = close(fd);
 	return (0);
 }
-
-// cc -Werror -Wextra -Wall -D BUFFER_SIZE=3 get_next_line.c get_next_line_utils.c main.c
-
-//./a.out get_next_line.c
-// ./a.out /dev/random
-	/* gera numeros aleatorios */
-// ./a.out /dev/tty
-	/* standart input: Recebe uma entrada que nós digitamos e 
-	nossa GNL deve imprimir o mesmo. Interrompa com ctrl+c */
-//./a.out file
-
-//read retorna quantidade de bytes lidos
-//read coloca conteúdo lido no line mallocado passado por parâmetro

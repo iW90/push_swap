@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:11:11 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 21:38:21 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 21:41:42 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	checker(t_stacks *stks)
 		write(1, "KO\n", 3);
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_stacks	stks;
@@ -73,4 +72,3 @@ int	main(int argc, char **argv)
 	exit_program(0, "", stks.stack_a, stks.stack_b);
 	return (0);
 }
-
