@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 20:08:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:06:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	is_sorted(t_list *lst)
 {
 	while (lst->next)
 	{
-		if (lst->num != lst->next->num - 1)
+		if (lst->num > lst->next->num)
 			return (0);
 		lst = lst->next;
 	}
