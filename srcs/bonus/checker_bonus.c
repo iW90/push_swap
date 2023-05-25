@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 18:11:11 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 22:07:47 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:37:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	checker(t_stacks *stks)
 		move = get_next_line(0);
 	}
 	free(move);
-	if (is_sorted(stks->stack_a))
+	if (is_sorted(stks->stack_a) && !stks->b_size)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

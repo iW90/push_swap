@@ -6,12 +6,16 @@
 /*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:46:49 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/22 20:37:52 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:42:44 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/* EXECUTA OS MOVIMENTOS CONCOMITANTEMENTE
+ * Executa rr se os custos necessários para A e B forem positivos,
+ * e executa rrr se os custos de ambos forem negativos.
+ */
 static void	do_moves_a_and_b(t_cost *cost, t_stacks *stks)
 {
 	if ((cost->a > 0 && cost->b < 0) || (cost->a < 0 && cost->b > 0))
@@ -33,6 +37,10 @@ static void	do_moves_a_and_b(t_cost *cost, t_stacks *stks)
 	}
 }
 
+/* EXECUTA OS MOVIMENTOS INDIVIDUALMENTE
+ * Executa ra ou rb se o custo necessário for positivo,
+ * e executa rra ou rrb se o custo for negativo.
+ */
 static void	do_moves_a_or_b(t_cost *cost, t_stacks *stks)
 {
 	while (cost->a || cost->b)
@@ -60,6 +68,8 @@ static void	do_moves_a_or_b(t_cost *cost, t_stacks *stks)
 	}
 }
 
+/* EXECUTA OS MOVIMENTOS
+ */
 static void	do_moves(t_cost *cost, t_stacks *stks)
 {
 	do_moves_a_and_b(cost, stks);
@@ -68,9 +78,9 @@ static void	do_moves(t_cost *cost, t_stacks *stks)
 }
 
 /* PRIMEIROS PASSOS
- * Enviar 3 elementos para B
- * ordenar descendentemente
+ * Enviar 3 elementos para B e ordenar B ao contrário.
  * Buscar sempre pelo melhor número a ser transferido para B
+ * de acordo com o custo calculado.
  */
 void	push_swap(t_stacks *stks)
 {
