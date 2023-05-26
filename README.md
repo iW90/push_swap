@@ -28,8 +28,10 @@ O objetivo deste projeto é estudar sobre algoritmos de ordenação e suas compl
 
 > Requer conhecimento de estruturas de dados, algoritmos de ordenação e programação em C.
 
+___
 
-## Programa: Push Swap
+
+## Push Swap
 
 Através dos argumentos de linhas de comando (argv), o programa recebe os números inteiros positivos ou negativos, sem duplicatas, e executa os movimentos necessários para ordená-los. Apenas as instruções são impressas no terminal (stdout), e ao final delas, todos os números estarão em em ordem crescente na pilha A, enquanto a pilha B estará vazia.
 
@@ -37,25 +39,21 @@ Em caso de erro, como por exemplo no caso de entrada de números repetidos, que 
 
 Este projeto está conforme os padrões da Norminette (com exceção dos printers e comentários), e de acordo com as regras do desafio, sendo permitidas somente as funções `write`, `read`, `malloc`, `free` e `exit`, e proibidas as demais funções e bibliotecas.
 
+### Compilação e Execução
 
-## Programa: Checker
+1. Primeiro é necessário compilar:
 
-Para conferir se um conjunto de instruções é válido ou não, pode ser utilizado o **Checker**. Também por meio de linhas de comando (argv), o programa recebe os mesmos números utilizados no Push Swap, e através da entrada padrão (stdin), no terminal, são digitadas as operações. Se a pilha for corretamente ordenada, o Checker imprimirá "OK", caso contrário "KO".
-
-Assim como o Push Swap, imprime "Error" na saída padrão de erros (stderr), e segue os padrões da Norminette e regras do desafio (funções permitidas: `write`, `read`, `malloc`, `free` e `exit`).
-___
-
-## Compilação
-
-É necessário ter o `make` e o `clang` instalados.
+```
+> make
+```
 
 - A execução do comando `make` gera o programa `push_swap`.
-- A execução do comando `make bonus` gera o programa `checker`.
 
+> O comando deve ser feito na raiz do projeto.
 
-## Execução
+> É necessário ter o `make` e o `clang` instalados.
 
-- Push Swap:
+2. Agora é só executar o programa:
 
 ```
 > ./push_swap 895 0 3 12 7
@@ -69,7 +67,31 @@ pa
 ra
 ```
 
-- Checker:
+___
+
+
+## Programa: Checker
+
+Para conferir se um conjunto de instruções é válido ou não, pode ser utilizado o **Checker**. Também por meio de linhas de comando (argv), o programa recebe os mesmos números utilizados no Push Swap, e através da entrada padrão (stdin), no terminal, são digitadas as operações. Se a pilha for corretamente ordenada, o Checker imprimirá "OK", caso contrário "KO".
+
+Assim como o Push Swap, imprime "Error" na saída padrão de erros (stderr), e segue os padrões da Norminette e regras do desafio (funções permitidas: `write`, `read`, `malloc`, `free` e `exit`).
+
+
+### Compilação e Execução
+
+1. Primeiro é necessário compilar:
+
+```
+> make bonus
+```
+
+- A execução do comando `make bonus` gera o programa `checker`.
+
+> O comando deve ser feito na raiz do projeto.
+
+> É necessário ter o `make` e o `clang` instalados.
+
+2. Agora é só executar o programa:
 
 ```
 > ./checker 895 0 3 12 7
