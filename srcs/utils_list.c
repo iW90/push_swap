@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:58:01 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/21 10:13:41 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:02:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 /* NOVO NODE
  * Cria um novo item e adiciona à lista
  */
-t_list	*ft_newnode(int num, t_list *previous)
+t_list	*ft_newnode(int num, t_list *previous, int *index)
 {
 	t_list	*newnode;
 
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
-		exit_program(1, "Error\n", previous);
+		exit_program(1, "Error\n", previous, index);
 	*newnode = (t_list){0};
 	newnode->num = num;
 	newnode->prev = previous;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 15:30:31 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/26 15:18:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:04:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * Verifica se o valor recebido possui apenas caracteres
  * numéricos ou sinais (+ e -).
  */
-static void	is_all_digits(int n, char **numbers)
+static void	is_all_digits(int n, char **numbers, int *index)
 {
 	int	j;
 
@@ -26,11 +26,11 @@ static void	is_all_digits(int n, char **numbers)
 		if (numbers[n][j] == '+' || numbers[n][j] == '-')
 			j++;
 		if (!numbers[n][j])
-			exit_program(1, "Error\n", NULL);
+			exit_program(1, "Error\n", NULL, index);
 		while (numbers[n][j])
 		{
 			if (numbers[n][j] < '0' || numbers[n][j] > '9')
-				exit_program(1, "Error\n", NULL);
+				exit_program(1, "Error\n", NULL, index);
 			j++;
 		}
 		j = 0;
@@ -41,7 +41,7 @@ static void	is_all_digits(int n, char **numbers)
  * Cada número será comparado aos números anteriores
  * já salvos na lista linkada para evitar repetição.
  */
-static void	is_repeated_num(int n, t_list *lst)
+static void	is_repeated_num(int n, t_list *lst, int *index)
 {
 	if (lst)
 	{
@@ -50,7 +50,7 @@ static void	is_repeated_num(int n, t_list *lst)
 		while (lst)
 		{
 			if (lst->num == n)
-				exit_program(1, "Error\n", lst);
+				exit_program(1, "Error\n", lst, index);
 			lst = lst->prev;
 		}
 	}
@@ -68,15 +68,15 @@ t_list	*parse_list(int total, char **num, int *index)
 
 	lst = NULL;
 	i = 1;
-	is_all_digits(total, num);
+	is_all_digits(total, num, index);
 	while (i < total)
 	{
 		n = ft_atol(num[i]);
 		if (n <= I_MIN || n >= I_MAX)
-			exit_program(1, "Error\n", lst);
-		is_repeated_num(n, lst);
-		lst = ft_newnode(n, lst);
-		*index++ = n;
+			exit_program(1, "Error\n", lst, index);
+		is_repeated_num(n, lst, index);
+		lst = ft_newnode(n, lst, index);
+		index[i - 1] = n;
 		i++;
 	}
 	if (lst)

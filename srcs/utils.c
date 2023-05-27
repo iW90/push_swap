@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/25 14:00:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:02:42 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ void	ft_putstr_fd(char *str, int fd)
 	}
 }
 
-void	exit_program(int ret, char *msg, t_list *lst)
+void	exit_program(int ret, char *msg, t_list *lst, int *index)
 {
+	if (index)
+		free(index);
 	if (lst)
 		ft_lstclear(lst);
 	if (msg)

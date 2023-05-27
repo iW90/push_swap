@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:20 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/22 21:31:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:03:17 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,17 @@ int	main(int argc, char **argv)
 	int			*index;
 
 	if (argc == 1)
-		exit_program(1, "", NULL);
+		exit_program(1, "", NULL, NULL);
 	stks = (t_stacks){0};
 	stks.i_max = argc - 2;
 	stks.a_size = argc - 1;
 	index = malloc(sizeof(int) * stks.a_size);
 	if (!index)
-		exit_program(1, "Error\n", NULL);
+		exit_program(1, "Error\n", NULL, NULL);
 	stks.stack_a = parse_list(argc, argv, index);
 	quick_sort(index, 0, stks.i_max);
 	parse_index(index, stks.stack_a, stks.a_size);
-	free(index);
 	push_swap_init(stks.a_size, &stks);
-	exit_program(0, "", stks.stack_a);
+	exit_program(0, "", stks.stack_a, index);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 15:42:15 by inwagner          #+#    #+#             */
-/*   Updated: 2023/05/23 19:00:25 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:02:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_cost
 
 long	ft_atol(const char *str);
 void	ft_putstr_fd(char *str, int fd);
-void	exit_program(int ret, char *msg, t_list *lst);
+void	exit_program(int ret, char *msg, t_list *lst, int *index);
 int		abs(int num);
 
 t_list	*parse_list(int total, char **num, int *index);
@@ -57,7 +57,7 @@ int		is_sorted_reverse(t_list *lst);
 int		is_ascending(t_list *lst);
 int		is_descending(t_list *lst);
 
-t_list	*ft_newnode(int num, t_list *previous);
+t_list	*ft_newnode(int num, t_list *previous, int *index);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list *lst);
 int		greater_index(t_list *lst);
