@@ -123,6 +123,25 @@ OK
 ```
 ___
 
+## Gerador de números
+
+No terminal, utilize o comando:
+
+```
+shuf -i 0-1000 -n 30 | tr "\n" " "
+```
+
+- `-i` (**input range**): Define o range, entre 0 e 1000.
+- `-n` (**number**): Quantidade de números exibidos a partir do primeiro.
+___
+
+## Testers utilizados
+
+- [Push Swap Visualizer](https://github.com/o-reo/push_swap_visualizer)
+- [Push Swap Tester](https://github.com/laisarena/push_swap_tester)
+- [Push Swap Averager](https://github.com/Vinni-Cedraz/push_swap_averager)
+___
+
 ## Visualização
 
-> Soon.
+> *Soon.*
