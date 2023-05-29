@@ -144,4 +144,8 @@ ___
 
 ## Visualização
 
-> *Soon.*
+<div align="center">
+
+![Visualizer](./infos/ps_vis.gif)
+
+</div>
