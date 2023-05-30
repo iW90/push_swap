@@ -1,8 +1,10 @@
-# 42SP_push_swap
+# 42 Cursus - push_swap
 
-## Proposta
+<img src="https://game.42sp.org.br/static/assets/achievements/push_swapm.png" alt="completion-with-bonus-badge" align="left">
 
-O objetivo deste projeto é estudar sobre algoritmos de ordenação e suas complexidades. A tarefa é 'simples': dada uma sequência de números aleatórios (posivitos e negativos, mas não repetidos), organizá-los de forma crescente na pilha A usando apenas um conjunto de movimentos específicos e uma pilha auxiliar B. As operações são as seguintes:
+O objetivo deste projeto é estudar sobre algoritmos de ordenação e suas complexidades. A tarefa é 'simples': dada uma sequência de números aleatórios (posivitos e negativos, mas não repetidos), o programa deve organizá-los de forma crescente na pilha A usando apenas um conjunto de movimentos específicos e uma pilha auxiliar B. Opcionalmente também pode ser criado outro programa, o **checker**, que execute os movimentos informados pelo **push_swap** e valide se os números foram corretamente ordenados.
+
+## Movimentações <img src="https://img.shields.io/badge/GRADE-125%2F100-green" align="right">
 
 - **`sa` (swap a)**: Troca de posição os dois primeiros elementos da pilha A.
 
@@ -44,7 +46,7 @@ Este projeto está conforme os padrões da Norminette (com exceção dos printer
 1. Primeiro é necessário compilar:
 
 ```
-> make
+make
 ```
 
 - A execução do comando `make` gera o programa `push_swap`.
@@ -56,7 +58,7 @@ Este projeto está conforme os padrões da Norminette (com exceção dos printer
 2. Agora é só executar o programa:
 
 ```
-> ./push_swap 895 0 3 12 7
+./push_swap 895 0 3 12 7
 
 pb
 pb
@@ -70,9 +72,9 @@ ra
 ___
 
 
-## Programa: Checker
+## Checker
 
-Para conferir se um conjunto de instruções é válido ou não, pode ser utilizado o **Checker**. Também por meio de linhas de comando (argv), o programa recebe os mesmos números utilizados no Push Swap, e através da entrada padrão (stdin), no terminal, são digitadas as operações. Se a pilha for corretamente ordenada, o Checker imprimirá "OK", caso contrário "KO".
+Para conferir se um conjunto de instruções é válido ou não, pode ser utilizado o **checker**. Também por meio de linhas de comando (argv), o programa recebe os mesmos números utilizados no Push Swap, e através da entrada padrão (stdin), no terminal, são digitadas as operações. Se a pilha for corretamente ordenada, o Checker imprimirá "OK", caso contrário "KO".
 
 Assim como o Push Swap, imprime "Error" na saída padrão de erros (stderr), e segue os padrões da Norminette e regras do desafio (funções permitidas: `write`, `read`, `malloc`, `free` e `exit`).
 
@@ -82,7 +84,7 @@ Assim como o Push Swap, imprime "Error" na saída padrão de erros (stderr), e s
 1. Primeiro é necessário compilar:
 
 ```
-> make bonus
+make bonus
 ```
 
 - A execução do comando `make bonus` gera o programa `checker`.
@@ -93,15 +95,19 @@ Assim como o Push Swap, imprime "Error" na saída padrão de erros (stderr), e s
 
 2. Agora é só executar o programa:
 
+- Digite as instruções, uma a uma, enquanto o progrma estiver em execução.
+
+- Para interromper o processo, utilize o comando `ctrl + D`, e o resultado (**OK** ou **KO**) será impresso na tela.
+
 ```
-> ./checker 895 0 3 12 7
-> pb
-> pb
-> sa
-> ra
-> pa
-> pa
-> ra
+./checker 895 0 3 12 7
+pb
+pb
+sa
+ra
+pa
+pa
+ra
 
 OK
 ```
@@ -109,7 +115,7 @@ OK
 Se a quantidade de instruções for muito grande, é possível passar a saída do Push Swap diretamente para o Checker:
 
 ```
-> ./push_swap 7358 0 -1 3 | ./checker 7358 0 -1 3
+./push_swap 7358 0 -1 3 | ./checker 7358 0 -1 3
 
 OK
 ```
@@ -117,7 +123,7 @@ OK
 ou ainda:
 
 ```
-> NUM="7358 0 -1 3"; ./push_swap $NUM | ./checker $NUM
+NUM="7358 0 -1 3"; ./push_swap $NUM | ./checker $NUM
 
 OK
 ```
